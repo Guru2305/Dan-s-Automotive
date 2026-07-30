@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import GrainOverlay from './components/GrainOverlay';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import CarShowcaseSlider from './components/CarShowcaseSlider';
 import About from './components/About';
 import Services from './components/Services';
 import WhyChooseUs from './components/WhyChooseUs';
@@ -26,7 +25,7 @@ export default function App() {
       {/* SVG Noise Grain Overlay */}
       <GrainOverlay />
 
-      {/* Sticky Header */}
+      {/* Sleek Sticky Header */}
       <Navbar 
         onOpenBooking={() => handleOpenBooking()} 
       />
@@ -35,11 +34,6 @@ export default function App() {
       <main className="relative z-10">
         <Hero 
           onOpenBooking={() => handleOpenBooking()} 
-        />
-
-        {/* Full-Bleed Draggable / Swipeable Supercar Slider Component */}
-        <CarShowcaseSlider 
-          onOpenBooking={() => handleOpenBooking('Performance V12 Service')}
         />
 
         <About />
@@ -60,7 +54,7 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Booking Modal */}
+      {/* Service Booking Modal */}
       <BookingModal 
         isOpen={isBookingOpen} 
         onClose={() => setIsBookingOpen(false)} 
