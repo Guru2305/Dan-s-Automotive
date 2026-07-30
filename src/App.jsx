@@ -4,19 +4,28 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
+import CarSales from './components/CarSales';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
 import ContactAndHours from './components/ContactAndHours';
 import BookingModal from './components/BookingModal';
+import CarInquiryModal from './components/CarInquiryModal';
 import Footer from './components/Footer';
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('');
+  const [isCarInquiryOpen, setIsCarInquiryOpen] = useState(false);
+  const [selectedCar, setSelectedCar] = useState(null);
 
   const handleOpenBooking = (serviceName = '') => {
     setSelectedService(serviceName);
     setIsBookingOpen(true);
+  };
+
+  const handleOpenCarInquiry = (car = null) => {
+    setSelectedCar(car);
+    setIsCarInquiryOpen(true);
   };
 
   return (
@@ -25,21 +34,27 @@ export default function App() {
       {/* SVG Noise Grain Overlay */}
       <GrainOverlay />
 
-      {/* Sleek Sticky Header */}
+      {/* Sticky Header */}
       <Navbar 
         onOpenBooking={() => handleOpenBooking()} 
+        onOpenCarInquiry={() => handleOpenCarInquiry(null)}
       />
 
       {/* Main Content Sections */}
       <main className="relative z-10">
         <Hero 
           onOpenBooking={() => handleOpenBooking()} 
+          onOpenCarInquiry={() => handleOpenCarInquiry(null)}
         />
 
         <About />
 
         <Services 
           onSelectService={(serviceName) => handleOpenBooking(serviceName)} 
+        />
+
+        <CarSales 
+          onOpenCarInquiry={(car) => handleOpenCarInquiry(car)}
         />
 
         <WhyChooseUs />
@@ -54,11 +69,17 @@ export default function App() {
       {/* Footer */}
       <Footer />
 
-      {/* Service Booking Modal */}
+      {/* Interactive Modals */}
       <BookingModal 
         isOpen={isBookingOpen} 
         onClose={() => setIsBookingOpen(false)} 
         initialService={selectedService} 
+      />
+
+      <CarInquiryModal 
+        isOpen={isCarInquiryOpen} 
+        onClose={() => setIsCarInquiryOpen(false)} 
+        car={selectedCar} 
       />
 
     </div>
