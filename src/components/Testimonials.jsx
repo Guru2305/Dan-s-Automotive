@@ -51,64 +51,64 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="reviews" className="py-20 bg-[#E5E3DC] text-[#111111] border-t-2 border-[#111111] relative newsprint-grain">
+    <section id="reviews" className="py-20 bg-[#0B0B0C] text-[#E2E4E9] border-t border-white/10 relative carbon-grain">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-[#111111] pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-white/10 pb-6">
           <div>
-            <div className="font-mono-spec text-xs text-[#E53925] tracking-widest uppercase font-bold mb-2">
+            <div className="font-mono-spec text-xs text-[#DC2626] tracking-widest uppercase font-bold mb-2">
               [ 05 // VERIFIED CUSTOMER REPUTATION & REVIEWS ]
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl text-[#111111] uppercase tracking-tight">
-              4.8 ★ <span className="text-[#E53925]">REAL CUSTOMER TRUST</span>
+            <h2 className="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight">
+              4.8 ★ <span className="text-[#C5A059]">HALLMARK REPUTATION</span>
             </h2>
           </div>
-          <div className="mt-4 md:mt-0 text-right font-mono-spec text-xs text-[#555550]">
-            <span className="text-[#111111] font-bold block">165+ VERIFIED GOOGLE REVIEWS</span>
-            <span className="font-bold">9,000+ FACEBOOK COMMUNITY MEMBERS</span>
+          <div className="mt-4 md:mt-0 text-right font-mono-spec text-xs text-[#8A8F9E]">
+            <span className="text-white font-bold block">165+ VERIFIED GOOGLE REVIEWS</span>
+            <span className="font-semibold">9,000+ FACEBOOK COMMUNITY MEMBERS</span>
           </div>
         </div>
 
-        {/* Reviews Hairline Light Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 hairline-grid-light border-2 border-[#111111] bg-[#DEDBD3] mb-12">
+        {/* Reviews Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 hairline-grid-carbon border border-white/10 bg-[#141417] mb-12">
           {reviews.map((r, i) => (
             <div 
               key={i} 
-              className={`bg-[#E5E3DC] p-6 hover:bg-[#DEDBD3] transition-colors flex flex-col justify-between group ${
+              className={`bg-[#141417] p-6 hover:bg-[#1A1A1E] transition-colors flex flex-col justify-between group ${
                 i === 4 ? 'md:col-span-2 lg:col-span-1' : ''
               }`}
             >
               <div>
                 {/* Header Row */}
                 <div className="flex justify-between items-center mb-4">
-                  <span className="font-mono-spec text-sm text-[#E53925] font-bold">{r.code}</span>
-                  <div className="flex items-center gap-1 text-[#E53925]">
+                  <span className="font-mono-spec text-sm text-[#DC2626] font-bold">{r.code}</span>
+                  <div className="flex items-center gap-1 text-[#C5A059]">
                     {[...Array(r.stars)].map((_, s) => (
-                      <Star key={s} className="w-3.5 h-3.5 fill-[#E53925]" />
+                      <Star key={s} className="w-3.5 h-3.5 fill-[#C5A059]" />
                     ))}
                   </div>
                 </div>
 
                 {/* Service Tag */}
-                <div className="inline-block px-2.5 py-0.5 bg-[#DEDBD3] border border-[#111111]/30 font-mono-spec text-[10px] text-[#111111] font-bold uppercase mb-4">
+                <div className="inline-block px-2.5 py-0.5 bg-[#0B0B0C] border border-white/10 font-mono-spec text-[10px] text-[#E2E4E9] font-semibold uppercase mb-4">
                   // {r.service}
                 </div>
 
                 {/* Quote Text */}
-                <p className="text-xs sm:text-sm text-[#111111] font-sans-body leading-relaxed mb-6 italic font-medium">
+                <p className="text-xs sm:text-sm text-[#E2E4E9] font-sans-body leading-relaxed mb-6 italic font-normal">
                   "{r.quote}"
                 </p>
               </div>
 
               {/* Reviewer Details */}
-              <div className="pt-4 border-t border-[#111111]/10 font-mono-spec text-xs">
+              <div className="pt-4 border-t border-white/10 font-mono-spec text-xs">
                 <div className="flex justify-between items-center">
-                  <span className="font-bold text-[#111111] uppercase">{r.name}</span>
-                  <span className="text-[10px] text-[#E53925] font-bold">{r.date}</span>
+                  <span className="font-bold text-white uppercase">{r.name}</span>
+                  <span className="text-[10px] text-[#C5A059] font-bold">{r.date}</span>
                 </div>
-                <div className="flex items-center gap-1 text-[11px] text-[#555550] mt-1 font-bold">
-                  <MapPin className="w-3 h-3 text-[#E53925]" />
+                <div className="flex items-center gap-1 text-[11px] text-[#8A8F9E] mt-1 font-semibold">
+                  <MapPin className="w-3 h-3 text-[#DC2626]" />
                   <span>{r.location}</span>
                 </div>
               </div>
@@ -118,16 +118,16 @@ export default function Testimonials() {
         </div>
 
         {/* Review Footer Bar */}
-        <div className="p-4 bg-[#DEDBD3] border-2 border-[#111111] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono-spec text-xs">
+        <div className="p-4 bg-[#141417] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono-spec text-xs">
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#E53925]" />
-            <span className="text-[#111111] font-bold">READ ALL 165+ VERIFIED GOOGLE REVIEWS ONLINE ON GOOGLE MAPS</span>
+            <CheckCircle2 className="w-4 h-4 text-[#DC2626]" />
+            <span className="text-white font-semibold">READ ALL 165+ VERIFIED GOOGLE REVIEWS ONLINE ON GOOGLE MAPS</span>
           </div>
           <a
             href="https://google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-editorial px-4 py-2 bg-[#E53925] hover:bg-[#CC2D1B] text-white font-bold uppercase transition-colors cursor-pointer"
+            className="btn-hallmark px-4 py-2 bg-[#DC2626] hover:bg-[#B91C1C] text-white font-bold uppercase transition-colors cursor-pointer"
           >
             VIEW GOOGLE MAPS REVIEWS
           </a>

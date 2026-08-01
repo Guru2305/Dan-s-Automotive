@@ -102,53 +102,53 @@ export default function Services({ onSelectService }) {
   ];
 
   return (
-    <section id="services" className="py-20 bg-[#E5E3DC] text-[#111111] border-t-2 border-[#111111] relative newsprint-grain">
+    <section id="services" className="py-20 bg-[#0B0B0C] text-[#E2E4E9] border-t border-white/10 relative carbon-grain">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-[#111111] pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-white/10 pb-6">
           <div>
-            <div className="font-mono-spec text-xs text-[#E53925] tracking-widest uppercase font-bold mb-2">
+            <div className="font-mono-spec text-xs text-[#DC2626] tracking-widest uppercase font-bold mb-2">
               [ 03 // TECHNICAL WORKSHOP SERVICES & REPAIR SPEC ]
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl text-[#111111] uppercase tracking-tight">
-              PRECISION <span className="text-[#E53925]">GARAGE REPAIRS</span>
+            <h2 className="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight">
+              PRECISION <span className="text-[#DC2626]">GARAGE REPAIRS</span>
             </h2>
           </div>
-          <p className="mt-4 md:mt-0 text-sm font-mono-spec text-[#555550] max-w-md font-bold">
+          <p className="mt-4 md:mt-0 text-sm font-mono-spec text-[#8A8F9E] max-w-md font-semibold">
             TRANSPARENT FIXED PRICING // NO SURPRISE FEES // FULL DPF & WET BELT SPECIALIST CAPABILITY
           </p>
         </div>
 
-        {/* Spec Sheet Hairline Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 hairline-grid-clean border-2 border-[#111111] bg-[#111111] mb-12">
+        {/* Spec Sheet Carbon Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 hairline-grid-carbon border border-white/10 bg-[#141417] mb-12">
           {serviceList.map((s) => {
             const Icon = s.icon;
             return (
               <div 
                 key={s.id} 
-                className="bg-[#E5E3DC] p-6 hover:bg-[#DEDBD3] transition-all duration-200 flex flex-col justify-between h-full group"
+                className="bg-[#141417] p-6 hover:bg-[#1A1A1E] transition-all duration-200 flex flex-col justify-between h-full group"
               >
                 <div>
-                  {/* Top Spec Header */}
+                  {/* Top Header */}
                   <div className="flex justify-between items-center mb-4">
-                    <span className="font-mono-spec text-sm text-[#E53925] font-bold">{s.code}</span>
-                    <span className="px-2 py-0.5 bg-[#E53925]/10 border border-[#E53925] text-[#E53925] font-mono-spec text-[9px] font-bold uppercase tracking-wider">
+                    <span className="font-mono-spec text-sm text-[#DC2626] font-bold">{s.code}</span>
+                    <span className="px-2 py-0.5 bg-[#DC2626]/10 border border-[#DC2626]/30 text-[#DC2626] font-mono-spec text-[9px] font-bold uppercase tracking-wider">
                       {s.badge}
                     </span>
                   </div>
 
                   {/* Title & Icon */}
                   <div className="flex items-start gap-3 mb-3">
-                    <div className="p-2 bg-[#111111] text-white shrink-0">
-                      <Icon className="w-5 h-5 text-[#E53925]" />
+                    <div className="p-2 bg-[#0B0B0C] border border-white/10 text-white shrink-0">
+                      <Icon className="w-5 h-5 text-[#DC2626]" />
                     </div>
                     <div>
-                      <h3 className="font-display text-xl text-[#111111] uppercase tracking-wide leading-tight min-h-[3rem] flex items-center">
+                      <h3 className="font-display text-xl text-white uppercase tracking-wide leading-tight min-h-[3rem] flex items-center">
                         {s.name}
                       </h3>
-                      <div className="font-mono-spec text-xs text-[#555550] mt-1 flex items-center gap-2 font-bold">
-                        <span className="text-[#E53925]">{s.price}</span>
+                      <div className="font-mono-spec text-xs text-[#8A8F9E] mt-1 flex items-center gap-2 font-bold">
+                        <span className="text-[#DC2626]">{s.price}</span>
                         <span>•</span>
                         <span className="text-[11px]">{s.time}</span>
                       </div>
@@ -156,17 +156,17 @@ export default function Services({ onSelectService }) {
                   </div>
 
                   {/* Description */}
-                  <p className="text-xs text-[#555550] font-sans-body leading-relaxed mb-4 min-h-[4rem]">
+                  <p className="text-xs text-[#8A8F9E] font-sans-body leading-relaxed mb-4 min-h-[4rem]">
                     {s.desc}
                   </p>
 
                   {/* Symptoms List */}
-                  <div className="space-y-1.5 mb-5 pt-3 border-t border-[#111111]/10 font-mono-spec text-[11px]">
-                    <div className="text-[10px] text-[#555550] uppercase font-bold tracking-wider mb-1">// COMMON SYMPTOMS FIXED:</div>
+                  <div className="space-y-1.5 mb-5 pt-3 border-t border-white/10 font-mono-spec text-[11px]">
+                    <div className="text-[10px] text-[#8A8F9E] uppercase font-bold tracking-wider mb-1">// COMMON SYMPTOMS FIXED:</div>
                     {s.symptoms.map((sym, i) => (
-                      <div key={i} className="flex items-center gap-2 text-[#111111]">
-                        <span className="w-1.5 h-1.5 bg-[#E53925] rounded-full shrink-0"></span>
-                        <span className="font-medium text-[11px]">{sym}</span>
+                      <div key={i} className="flex items-center gap-2 text-white">
+                        <span className="w-1.5 h-1.5 bg-[#DC2626] rounded-full shrink-0"></span>
+                        <span className="font-medium text-[11px] text-[#E2E4E9]">{sym}</span>
                       </div>
                     ))}
                   </div>
@@ -174,20 +174,20 @@ export default function Services({ onSelectService }) {
                   {/* Highlights Pills */}
                   <div className="flex flex-wrap gap-1 mb-6">
                     {s.highlights.map((h, i) => (
-                      <span key={i} className="px-2 py-0.5 bg-[#DEDBD3] border border-[#111111]/30 text-[9px] font-mono-spec text-[#111111] font-bold">
+                      <span key={i} className="px-2 py-0.5 bg-[#0B0B0C] border border-white/10 text-[9px] font-mono-spec text-[#E2E4E9] font-semibold">
                         ✓ {h}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                {/* Bottom CTA Button - Pinned at bottom */}
+                {/* Bottom CTA Button */}
                 <button
                   onClick={() => onSelectService(s.name)}
-                  className="btn-editorial w-full py-2.5 bg-[#111111] hover:bg-[#E53925] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer mt-auto"
+                  className="btn-hallmark w-full py-2.5 bg-[#0B0B0C] hover:bg-[#DC2626] border border-white/10 text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer mt-auto"
                 >
                   <span>REQUEST QUOTE</span>
-                  <ArrowUpRight className="w-4 h-4 text-[#E53925] group-hover:text-white transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-[#DC2626] group-hover:text-white transition-colors" />
                 </button>
 
               </div>
@@ -196,19 +196,19 @@ export default function Services({ onSelectService }) {
         </div>
 
         {/* Custom Consultation Banner */}
-        <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#DEDBD3] border-2 border-[#111111] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+        <div className="bg-[#141417] border border-white/10 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="space-y-2">
-            <div className="font-mono-spec text-xs text-[#E53925] font-bold uppercase">// NEED A CUSTOM MECHANICAL DIAGNOSTIC?</div>
-            <h3 className="font-display text-2xl sm:text-3xl text-[#111111] uppercase tracking-wide">
+            <div className="font-mono-spec text-xs text-[#DC2626] font-bold uppercase">// NEED A CUSTOM MECHANICAL DIAGNOSTIC?</div>
+            <h3 className="font-display text-2xl sm:text-3xl text-white uppercase tracking-wide">
               UNSURE WHAT YOUR VEHICLE NEEDS? TEST-DRIVE DIAGNOSTICS WITH DAN.
             </h3>
-            <p className="text-sm text-[#555550] font-sans-body max-w-2xl font-medium">
+            <p className="text-sm text-[#8A8F9E] font-sans-body max-w-2xl font-normal">
               We frequently take customers out on diagnostic road tests to hear and feel the issue together before recommending any work.
             </p>
           </div>
           <button
             onClick={() => onSelectService('Diagnostic Consultation')}
-            className="btn-editorial px-6 py-3.5 bg-[#E53925] hover:bg-[#CC2D1B] text-white font-mono-spec text-xs font-bold uppercase tracking-widest flex items-center gap-2 shrink-0 cursor-pointer shadow-md"
+            className="btn-hallmark px-6 py-3.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white font-mono-spec text-xs font-bold uppercase tracking-widest flex items-center gap-2 shrink-0 cursor-pointer shadow-lg shadow-[#DC2626]/20"
           >
             <span>BOOK DIAGNOSTIC TEST</span>
             <ArrowUpRight className="w-4 h-4" />

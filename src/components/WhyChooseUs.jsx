@@ -42,48 +42,48 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="whyus" className="py-20 bg-[#E5E3DC] text-[#111111] border-t-2 border-[#111111] relative newsprint-grain">
+    <section id="whyus" className="py-20 bg-[#0B0B0C] text-[#E2E4E9] border-t border-white/10 relative carbon-grain">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-[#111111] pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-white/10 pb-6">
           <div>
-            <div className="font-mono-spec text-xs text-[#E53925] tracking-widest uppercase font-bold mb-2">
+            <div className="font-mono-spec text-xs text-[#DC2626] tracking-widest uppercase font-bold mb-2">
               [ 04 // PRACTICALITIES & GARAGE STANDARDS ]
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl text-[#111111] uppercase tracking-tight">
-              WHY DRIVERS <span className="text-[#E53925]">CHOOSE DAN'S</span>
+            <h2 className="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight">
+              WHY DRIVERS <span className="text-[#DC2626]">CHOOSE DAN'S</span>
             </h2>
           </div>
-          <p className="mt-4 md:mt-0 text-sm font-mono-spec text-[#555550] max-w-md font-bold">
+          <p className="mt-4 md:mt-0 text-sm font-mono-spec text-[#8A8F9E] max-w-md font-semibold">
             EVERY DETAIL DESIGNED FOR DRIVER CONVENIENCE, ACCESSIBILITY & ABSOLUTE PEACE OF MIND.
           </p>
         </div>
 
-        {/* 6 Panel Hairline Light Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 hairline-grid-light border-2 border-[#111111] bg-[#DEDBD3] mb-16">
+        {/* 6 Panel Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 hairline-grid-carbon border border-white/10 bg-[#141417] mb-16">
           {practicalities.map((item, i) => {
             const Icon = item.icon;
             return (
               <div 
                 key={i} 
-                className="bg-[#E5E3DC] p-6 hover:bg-[#DEDBD3] transition-colors flex flex-col justify-between group"
+                className="bg-[#141417] p-6 hover:bg-[#1A1A1E] transition-colors flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex justify-between items-center mb-4">
-                    <span className="font-mono-spec text-base text-[#E53925] font-bold">{item.code}</span>
-                    <div className="p-2 bg-[#111111] text-white group-hover:bg-[#E53925] transition-colors">
+                    <span className="font-mono-spec text-base text-[#DC2626] font-bold">{item.code}</span>
+                    <div className="p-2 bg-[#0B0B0C] border border-white/10 text-white group-hover:bg-[#DC2626] transition-colors">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
-                  <h3 className="font-display text-xl text-[#111111] uppercase tracking-wide mb-2">
+                  <h3 className="font-display text-xl text-white uppercase tracking-wide mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#555550] font-sans-body leading-relaxed">
+                  <p className="text-xs text-[#8A8F9E] font-sans-body leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
-                <div className="mt-6 pt-3 border-t border-[#111111]/10 font-mono-spec text-[10px] text-[#111111]/60 font-bold group-hover:text-[#E53925] transition-colors">
+                <div className="mt-6 pt-3 border-t border-white/10 font-mono-spec text-[10px] text-white/40 font-bold group-hover:text-[#DC2626] transition-colors">
                   VERIFIED STANDARDS // 100%
                 </div>
               </div>
@@ -91,18 +91,18 @@ export default function WhyChooseUs() {
           })}
         </div>
 
-        {/* Social Credibility Highlight Slab */}
-        <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#DEDBD3] border-2 border-[#111111] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-md">
+        {/* Social Highlight Banner */}
+        <div className="bg-[#141417] border border-white/10 p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl">
           
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-0.5 bg-[#E53925]/10 border border-[#E53925] text-[#E53925] font-mono-spec text-xs uppercase font-bold">
+            <div className="inline-flex items-center gap-2 px-3 py-0.5 bg-[#DC2626]/10 border border-[#DC2626]/30 text-[#DC2626] font-mono-spec text-xs uppercase font-bold">
               <Video className="w-3.5 h-3.5" />
               <span>TIKTOK & FACEBOOK COMMUNITY</span>
             </div>
-            <h3 className="font-display text-3xl sm:text-4xl text-[#111111] uppercase tracking-wide">
+            <h3 className="font-display text-3xl sm:text-4xl text-white uppercase tracking-wide">
               SEE US IN ACTION BEFORE YOU VISIT
             </h3>
-            <p className="text-sm text-[#555550] font-sans-body max-w-2xl leading-relaxed font-medium">
+            <p className="text-sm text-[#8A8F9E] font-sans-body max-w-2xl leading-relaxed font-normal">
               We post unedited footage of diagnostic challenges, wet belt overhauls, and DPF cleaning results. Join over 9,000+ followers who trust Dan's Automotive before even stepping foot in our Sittingbourne garage.
             </p>
           </div>
@@ -112,7 +112,7 @@ export default function WhyChooseUs() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-editorial px-6 py-3 bg-[#111111] hover:bg-[#222222] text-[#E5E3DC] font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
+              className="btn-hallmark px-6 py-3 bg-[#0B0B0C] hover:bg-[#1A1A1E] border border-white/10 text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
             >
               <span>FACEBOOK (9,000+ LIKES)</span>
             </a>
@@ -120,7 +120,7 @@ export default function WhyChooseUs() {
               href="https://tiktok.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-editorial-reverse px-6 py-3 bg-[#E53925] hover:bg-[#CC2D1B] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
+              className="btn-hallmark-reverse px-6 py-3 bg-[#DC2626] hover:bg-[#B91C1C] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
             >
               <span>WATCH TIKTOK VIDEOS</span>
             </a>

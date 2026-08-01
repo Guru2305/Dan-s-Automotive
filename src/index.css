@@ -2,27 +2,29 @@
 
 @layer base {
   :root {
-    --bg-newsprint: #E5E3DC;
-    --panel-newsprint: #DEDBD3;
-    --text-ink: #111111;
-    --text-muted: #555550;
-    --accent-red: #E53925;
-    --accent-red-hover: #CC2D1B;
-    --border-hairline: #111111;
+    --bg-carbon: #0B0B0C;
+    --panel-carbon: #141417;
+    --panel-card: #1A1A1E;
+    --text-silver: #E2E4E9;
+    --text-muted: #8A8F9E;
+    --accent-red: #DC2626;
+    --accent-red-hover: #B91C1C;
+    --gold-hallmark: #C5A059;
+    --border-carbon: rgba(255, 255, 255, 0.08);
   }
 
   body {
-    background-color: var(--bg-newsprint);
-    color: var(--text-ink);
+    background-color: var(--bg-carbon);
+    color: var(--text-silver);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
 }
 
-/* Custom Editorial Typography Utilities */
+/* Custom Typography Utilities */
 .font-display {
   font-family: 'Anton', sans-serif;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -34,70 +36,27 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Texture Overlay */
-.newsprint-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+/* Subtle Automotive Carbon Grain */
+.carbon-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
 }
 
-/* Precise Corner Crop-Mark Brackets */
-.crop-bracket-container {
-  position: relative;
+/* Hallmark Gold Metallic Shimmer Badge */
+.hallmark-gold-badge {
+  background: linear-gradient(135deg, #D4AF37 0%, #C5A059 50%, #9A7B38 100%);
+  color: #0B0B0C;
 }
 
-.crop-bracket-container::before,
-.crop-bracket-container::after {
-  content: '';
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.crop-marks-top::before {
-  top: 6px;
-  left: 6px;
-  border-top: 2px solid #111111;
-  border-left: 2px solid #111111;
-}
-
-.crop-marks-top::after {
-  top: 6px;
-  right: 6px;
-  border-top: 2px solid #111111;
-  border-right: 2px solid #111111;
-}
-
-.crop-marks-bottom::before {
-  bottom: 6px;
-  left: 6px;
-  border-bottom: 2px solid #111111;
-  border-left: 2px solid #111111;
-}
-
-.crop-marks-bottom::after {
-  bottom: 6px;
-  right: 6px;
-  border-bottom: 2px solid #111111;
-  border-right: 2px solid #111111;
-}
-
-/* Angled Button Edges */
-.btn-editorial {
+/* Clipped Automotive Action Buttons */
+.btn-hallmark {
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-editorial-reverse {
+.btn-hallmark-reverse {
   clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Paper Ticker Ribbon */
-.paper-ticker {
-  background: #DEDBD3;
-  border-top: 2px solid #111111;
-  border-bottom: 2px solid #111111;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Custom Scrollbar */
@@ -105,18 +64,18 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #E5E3DC;
+  background: #0B0B0C;
 }
 ::-webkit-scrollbar-thumb {
-  background: #E53925;
+  background: #DC2626;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #CC2D1B;
+  background: #B91C1C;
 }
 
-/* Hairline Grid Helper */
-.hairline-grid-clean {
+/* Dark Carbon Hairline Grid */
+.hairline-grid-carbon {
   display: grid;
-  background-color: #111111;
+  background-color: rgba(255, 255, 255, 0.08);
   gap: 1px;
 }
