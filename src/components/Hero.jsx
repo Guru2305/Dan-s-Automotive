@@ -1,73 +1,55 @@
 import React from 'react';
-import { Star, ThumbsUp, Wrench, ArrowRight, Phone, CheckCircle2, Cpu, ShieldCheck } from 'lucide-react';
+import { Wrench, ArrowRight, Phone, CheckCircle2, Cpu, ShieldCheck, Star, ThumbsUp } from 'lucide-react';
 
 export default function Hero({ onOpenBooking }) {
   return (
-    <section id="home" className="relative min-h-screen pt-28 pb-16 lg:pt-36 lg:pb-24 bg-[#E5E3DC] text-[#111111] overflow-hidden newsprint-grain">
+    <section id="home" className="relative pt-28 pb-16 lg:pt-36 lg:pb-20 bg-[#E5E3DC] text-[#111111] overflow-hidden newsprint-grain">
       
-      {/* Corner Crop Marks framing the page top */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Top Editorial Spec Line */}
-        <div className="flex justify-between items-center border-b-2 border-[#111111] pb-3 mb-8 font-mono-spec text-xs">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b-2 border-[#111111] pb-3 mb-10 font-mono-spec text-xs gap-2">
           <div className="flex items-center gap-3">
             <span className="font-bold text-[#E53925]">// ISSUE NO. 01</span>
-            <span className="hidden sm:inline text-[#111111]">DAN'S AUTOMOTIVE SERVICES</span>
-            <span className="text-[#111111]/30">|</span>
-            <span className="text-[#111111]/70">SITTINGBOURNE, KENT ME9 7JH</span>
+            <span className="font-bold text-[#111111]">DAN'S AUTOMOTIVE SERVICES</span>
+            <span className="text-[#111111]/30 hidden sm:inline">|</span>
+            <span className="text-[#555550] hidden sm:inline">SITTINGBOURNE, KENT ME9 7JH</span>
           </div>
           <div className="font-bold text-[#E53925] uppercase tracking-wider">
-            4.8★ GOOGLE TRUSTED (165+ REVIEWS)
+            4.8★ GOOGLE RATED (165+ REVIEWS)
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Bold Dual-Tone Typography Stack */}
+          {/* Left Column: Clean Editorial Headline Stack */}
           <div className="lg:col-span-7 space-y-6">
             
             {/* Status Pill */}
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#DEDBD3] border border-[#111111] font-mono-spec text-xs text-[#111111]">
               <span className="w-2 h-2 rounded-full bg-[#E53925] animate-ping"></span>
-              <span className="font-bold uppercase tracking-wider">FOR THOSE ABOUT TO REPAIR</span>
+              <span className="font-bold uppercase tracking-wider">RADICAL MECHANICAL HONESTY</span>
               <span className="text-[#111111]/30">|</span>
-              <span className="text-[#E53925] font-bold">RADICAL HONESTY</span>
+              <span className="text-[#E53925] font-bold">EST. SITTINGBOURNE</span>
             </div>
 
-            {/* Layered Display Headline Stack (Inspired by reference poster image) */}
+            {/* Clean Stacked Display Headline */}
             <div className="space-y-1">
-              
-              {/* Row 1: DON'T BIN IT */}
-              <div className="ghost-text-wrapper block">
-                <span className="ghost-text-cyan font-display text-5xl sm:text-7xl lg:text-8xl leading-none uppercase">
-                  DON'T BIN IT.
-                </span>
-                <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl leading-none uppercase text-[#111111] relative z-10">
-                  DON'T BIN IT.
-                </h1>
-              </div>
-
-              {/* Row 2: FIX IT (In Vermillion Red) */}
-              <div className="ghost-text-wrapper block">
-                <span className="ghost-text-cyan font-display text-6xl sm:text-8xl lg:text-9xl leading-none uppercase">
-                  FIX IT.
-                </span>
-                <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl leading-none uppercase text-[#E53925] relative z-10 tracking-tight">
-                  FIX IT.
-                </h1>
-              </div>
-
-              {/* Sub-headline Banner */}
-              <div className="pt-2">
-                <h2 className="font-display text-2xl sm:text-4xl text-[#111111] uppercase tracking-wide border-t-2 border-[#111111] pt-3">
-                  THE RIGHT TO REPAIR WHAT IS YOURS.
+              <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl leading-none uppercase text-[#111111] tracking-tight">
+                DON'T SCRAP IT.
+              </h1>
+              <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl leading-none uppercase text-[#E53925] tracking-tight">
+                FIX IT.
+              </h1>
+              <div className="pt-2 border-t-2 border-[#111111] mt-3">
+                <h2 className="font-display text-2xl sm:text-4xl text-[#111111] uppercase tracking-wide">
+                  HONEST WORK. NO EXCUSES.
                 </h2>
               </div>
-
             </div>
 
             {/* Editorial Body Copy */}
-            <p className="text-base sm:text-lg text-[#555550] font-sans-body max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg text-[#555550] font-sans-body max-w-xl leading-relaxed font-medium">
               Throwing away a complex car component is a choice. We choose to diagnose, repair, and rebuild. Run by <strong className="text-[#111111] font-bold">Dan & Jenna</strong> in Sittingbourne, Kent — built on radical mechanical honesty, deep diagnostic skills, and zero unnecessary upselling.
             </p>
 
@@ -76,7 +58,7 @@ export default function Hero({ onOpenBooking }) {
               
               <button
                 onClick={onOpenBooking}
-                className="btn-editorial px-8 py-4 bg-[#E53925] hover:bg-[#CC2D1B] text-white font-mono-spec text-sm uppercase tracking-widest font-bold flex items-center justify-center gap-3 transition-all shadow-lg cursor-pointer group"
+                className="btn-editorial px-8 py-4 bg-[#E53925] hover:bg-[#CC2D1B] text-white font-mono-spec text-sm uppercase tracking-widest font-bold flex items-center justify-center gap-3 transition-all shadow-md cursor-pointer group"
               >
                 <Wrench className="w-4 h-4 text-white group-hover:rotate-45 transition-transform" />
                 <span>BOOK A SERVICE / MOT</span>
@@ -111,11 +93,9 @@ export default function Hero({ onOpenBooking }) {
 
           </div>
 
-          {/* Right Column: Contact Sheet Poster Frame with Corner Crop Marks */}
+          {/* Right Column: Clean Poster Artwork Frame */}
           <div className="lg:col-span-5 relative">
-            
-            {/* Corner Crop Marks Container */}
-            <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#DEDBD3] border-2 border-[#111111] p-4 shadow-2xl relative">
+            <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#DEDBD3] border-2 border-[#111111] p-4 shadow-xl">
               
               {/* Header bar */}
               <div className="flex justify-between items-center px-3 py-2 bg-[#E5E3DC] border-b border-[#111111] font-mono-spec text-xs font-bold mb-3">
@@ -124,7 +104,7 @@ export default function Hero({ onOpenBooking }) {
               </div>
 
               {/* Poster Image */}
-              <div className="relative overflow-hidden aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] border border-[#111111] bg-black">
+              <div className="relative overflow-hidden aspect-[4/3] border border-[#111111] bg-black">
                 <img
                   src="/images/garage_workshop.png"
                   alt="Dan's Automotive Workshop Floor"
@@ -164,31 +144,30 @@ export default function Hero({ onOpenBooking }) {
               </div>
 
             </div>
-
           </div>
 
         </div>
 
-        {/* Paper Ticker Tape Strip (Styled directly after reference image ticker) */}
-        <div className="mt-16 paper-ticker p-4 font-mono-spec text-xs text-[#111111] flex flex-wrap items-center justify-around gap-4 font-bold tracking-wider uppercase">
+        {/* Clean Paper Ticker Ribbon */}
+        <div className="mt-14 paper-ticker py-3.5 px-4 font-mono-spec text-xs text-[#111111] flex flex-wrap items-center justify-around gap-4 font-bold tracking-wider uppercase">
           <div className="flex items-center gap-2">
-            <span className="text-[#E53925]">/</span>
+            <span className="text-[#E53925] font-black">/</span>
             <span>4.8★ GOOGLE RATED</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-[#E53925]">/</span>
+            <span className="text-[#E53925] font-black">/</span>
             <span className="text-[#E53925]">165+ VERIFIED REVIEWS</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-[#E53925]">/</span>
+            <span className="text-[#E53925] font-black">/</span>
             <span>9,000+ FB LIKES</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-[#E53925]">/</span>
+            <span className="text-[#E53925] font-black">/</span>
             <span className="text-[#E53925]">100% ON-SITE GARAGE</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-[#E53925]">/</span>
+            <span className="text-[#E53925] font-black">/</span>
             <span>ECOBOOST & PURETECH WET BELT SPEC</span>
           </div>
         </div>

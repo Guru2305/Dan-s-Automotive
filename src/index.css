@@ -8,8 +8,7 @@
     --text-muted: #555550;
     --accent-red: #E53925;
     --accent-red-hover: #CC2D1B;
-    --ghost-cyan: #6B9A9B;
-    --border-hairline: rgba(17, 17, 17, 0.15);
+    --border-hairline: #111111;
   }
 
   body {
@@ -23,7 +22,7 @@
 /* Custom Editorial Typography Utilities */
 .font-display {
   font-family: 'Anton', sans-serif;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
@@ -37,10 +36,10 @@
 
 /* Texture Overlay */
 .newsprint-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
 }
 
-/* Corner Crop-Mark Brackets */
+/* Precise Corner Crop-Mark Brackets */
 .crop-bracket-container {
   position: relative;
 }
@@ -49,52 +48,38 @@
 .crop-bracket-container::after {
   content: '';
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   pointer-events: none;
   z-index: 10;
 }
 
 .crop-marks-top::before {
-  top: 8px;
-  left: 8px;
+  top: 6px;
+  left: 6px;
   border-top: 2px solid #111111;
   border-left: 2px solid #111111;
 }
 
 .crop-marks-top::after {
-  top: 8px;
-  right: 8px;
+  top: 6px;
+  right: 6px;
   border-top: 2px solid #111111;
   border-right: 2px solid #111111;
 }
 
 .crop-marks-bottom::before {
-  bottom: 8px;
-  left: 8px;
+  bottom: 6px;
+  left: 6px;
   border-bottom: 2px solid #111111;
   border-left: 2px solid #111111;
 }
 
 .crop-marks-bottom::after {
-  bottom: 8px;
-  right: 8px;
+  bottom: 6px;
+  right: 6px;
   border-bottom: 2px solid #111111;
   border-right: 2px solid #111111;
-}
-
-/* Red Variant Crop Marks */
-.crop-marks-red::before {
-  top: 8px;
-  left: 8px;
-  border-top: 2px solid #E53925;
-  border-left: 2px solid #E53925;
-}
-.crop-marks-red::after {
-  top: 8px;
-  right: 8px;
-  border-top: 2px solid #E53925;
-  border-right: 2px solid #E53925;
 }
 
 /* Angled Button Edges */
@@ -108,35 +93,11 @@
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Layered Ghost Text Effect (Cyan / Muted Teal offset behind headline) */
-.ghost-text-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-.ghost-text-cyan {
-  position: absolute;
-  top: -6px;
-  left: -5px;
-  color: #6B9A9B;
-  opacity: 0.55;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-}
-
-.ghost-text-red {
-  color: #E53925;
-}
-
-
-/* Paper Ticker Tape Effect */
+/* Paper Ticker Ribbon */
 .paper-ticker {
   background: #DEDBD3;
-  border-top: 1px solid #111111;
-  border-bottom: 1px solid #111111;
-  transform: rotate(-0.5deg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 2px solid #111111;
+  border-bottom: 2px solid #111111;
 }
 
 /* Custom Scrollbar */
@@ -154,8 +115,8 @@
 }
 
 /* Hairline Grid Helper */
-.hairline-grid-light {
+.hairline-grid-clean {
   display: grid;
-  background-color: rgba(17, 17, 17, 0.15);
+  background-color: #111111;
   gap: 1px;
 }

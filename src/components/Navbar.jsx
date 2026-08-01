@@ -44,15 +44,14 @@ export default function Navbar({ onOpenBooking }) {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#E5E3DC]/95 backdrop-blur-md border-b-2 border-[#111111] shadow-md py-3' : 'bg-[#E5E3DC]/85 backdrop-blur-sm border-b border-[#111111]/20 py-4'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#E5E3DC]/95 backdrop-blur-md border-b-2 border-[#111111] shadow-md py-3' : 'bg-[#E5E3DC]/90 backdrop-blur-sm border-b border-[#111111]/20 py-4'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between h-12">
           
           {/* Logo & Brand Identity */}
           <a href="#home" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-11 h-11 bg-[#111111] btn-editorial group-hover:bg-[#E53925] transition-colors">
-              <Wrench className="w-6 h-6 text-[#E5E3DC] transform group-hover:rotate-12 transition-transform" />
-              <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 bg-[#E53925] border border-[#111111]"></div>
+            <div className="relative flex items-center justify-center w-10 h-10 bg-[#111111] btn-editorial group-hover:bg-[#E53925] transition-colors shrink-0">
+              <Wrench className="w-5 h-5 text-[#E5E3DC] transform group-hover:rotate-12 transition-transform" />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-2">
@@ -61,28 +60,28 @@ export default function Navbar({ onOpenBooking }) {
                 </span>
               </div>
               <div className="flex items-center gap-2 mt-0.5">
-                <span className="font-mono-spec text-[10px] sm:text-xs text-[#555550] tracking-widest uppercase font-bold">
-                  SERVICES <span className="text-[#111111]/40">//</span> SITTINGBOURNE, KENT
+                <span className="font-mono-spec text-[10px] sm:text-xs text-[#555550] tracking-widest uppercase font-semibold">
+                  SERVICES <span className="text-[#111111]/30">//</span> SITTINGBOURNE, KENT
                 </span>
               </div>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          <nav className="hidden lg:flex items-center space-x-1">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
                 <a
                   key={link.id}
                   href={link.href}
-                  className={`px-3 py-1.5 font-mono-spec text-xs uppercase tracking-wider transition-all duration-200 relative group flex items-center gap-1.5 ${
+                  className={`px-3 py-1.5 font-mono-spec text-xs uppercase tracking-wider transition-all duration-200 flex items-center gap-1.5 ${
                     isActive 
-                      ? 'text-[#E53925] font-bold border-b-2 border-[#E53925]' 
+                      ? 'text-[#E53925] font-bold bg-[#111111]/5 border-b-2 border-[#E53925]' 
                       : 'text-[#111111]/80 hover:text-[#111111] hover:bg-[#111111]/5'
                   }`}
                 >
-                  <span className="text-[10px] text-[#555550] font-mono-spec group-hover:text-[#E53925] transition-colors">
+                  <span className="text-[10px] text-[#555550] font-mono-spec">
                     {link.code} —
                   </span>
                   <span>{link.name}</span>
@@ -95,10 +94,10 @@ export default function Navbar({ onOpenBooking }) {
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={onOpenBooking}
-              className="btn-editorial px-5 py-2.5 bg-[#E53925] hover:bg-[#CC2D1B] text-white font-mono-spec text-xs tracking-wider uppercase font-bold flex items-center gap-2 transition-all shadow-md cursor-pointer"
+              className="btn-editorial px-5 py-2.5 bg-[#E53925] hover:bg-[#CC2D1B] text-white font-mono-spec text-xs tracking-wider uppercase font-bold flex items-center gap-2 transition-all shadow-sm cursor-pointer"
             >
               <Wrench className="w-3.5 h-3.5" />
-              <span>BOOK A SERVICE</span>
+              <span>BOOK SERVICE</span>
             </button>
             <a
               href="tel:+447487575483"
@@ -121,10 +120,10 @@ export default function Navbar({ onOpenBooking }) {
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-[#111111] hover:bg-[#111111]/10 border border-[#111111]/30 focus:outline-none"
+              className="p-2 text-[#111111] bg-[#DEDBD3] border border-[#111111] focus:outline-none"
               aria-label="Toggle Navigation Menu"
             >
-              {isOpen ? <X className="w-6 h-6 text-[#E53925]" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5 text-[#E53925]" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 

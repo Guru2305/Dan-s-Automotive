@@ -120,17 +120,17 @@ export default function Services({ onSelectService }) {
           </p>
         </div>
 
-        {/* Spec Sheet Grid (1px Hairline Light Grid Layout) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 hairline-grid-light border-2 border-[#111111] bg-[#DEDBD3] mb-12">
+        {/* Spec Sheet Hairline Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 hairline-grid-clean border-2 border-[#111111] bg-[#111111] mb-12">
           {serviceList.map((s) => {
             const Icon = s.icon;
             return (
               <div 
                 key={s.id} 
-                className="bg-[#E5E3DC] p-6 hover:bg-[#DEDBD3] transition-all duration-300 flex flex-col justify-between group relative"
+                className="bg-[#E5E3DC] p-6 hover:bg-[#DEDBD3] transition-all duration-200 flex flex-col justify-between h-full group"
               >
-                {/* Top Spec Header */}
                 <div>
+                  {/* Top Spec Header */}
                   <div className="flex justify-between items-center mb-4">
                     <span className="font-mono-spec text-sm text-[#E53925] font-bold">{s.code}</span>
                     <span className="px-2 py-0.5 bg-[#E53925]/10 border border-[#E53925] text-[#E53925] font-mono-spec text-[9px] font-bold uppercase tracking-wider">
@@ -144,7 +144,7 @@ export default function Services({ onSelectService }) {
                       <Icon className="w-5 h-5 text-[#E53925]" />
                     </div>
                     <div>
-                      <h3 className="font-display text-xl text-[#111111] uppercase tracking-wide leading-tight">
+                      <h3 className="font-display text-xl text-[#111111] uppercase tracking-wide leading-tight min-h-[3rem] flex items-center">
                         {s.name}
                       </h3>
                       <div className="font-mono-spec text-xs text-[#555550] mt-1 flex items-center gap-2 font-bold">
@@ -156,21 +156,22 @@ export default function Services({ onSelectService }) {
                   </div>
 
                   {/* Description */}
-                  <p className="text-xs text-[#555550] font-sans-body leading-relaxed mb-4">
+                  <p className="text-xs text-[#555550] font-sans-body leading-relaxed mb-4 min-h-[4rem]">
                     {s.desc}
                   </p>
 
-                  {/* Symptoms & Highlights List */}
+                  {/* Symptoms List */}
                   <div className="space-y-1.5 mb-5 pt-3 border-t border-[#111111]/10 font-mono-spec text-[11px]">
                     <div className="text-[10px] text-[#555550] uppercase font-bold tracking-wider mb-1">// COMMON SYMPTOMS FIXED:</div>
                     {s.symptoms.map((sym, i) => (
                       <div key={i} className="flex items-center gap-2 text-[#111111]">
-                        <span className="w-1.5 h-1.5 bg-[#E53925] rounded-full"></span>
-                        <span className="font-medium">{sym}</span>
+                        <span className="w-1.5 h-1.5 bg-[#E53925] rounded-full shrink-0"></span>
+                        <span className="font-medium text-[11px]">{sym}</span>
                       </div>
                     ))}
                   </div>
 
+                  {/* Highlights Pills */}
                   <div className="flex flex-wrap gap-1 mb-6">
                     {s.highlights.map((h, i) => (
                       <span key={i} className="px-2 py-0.5 bg-[#DEDBD3] border border-[#111111]/30 text-[9px] font-mono-spec text-[#111111] font-bold">
@@ -180,10 +181,10 @@ export default function Services({ onSelectService }) {
                   </div>
                 </div>
 
-                {/* Bottom CTA Button */}
+                {/* Bottom CTA Button - Pinned at bottom */}
                 <button
                   onClick={() => onSelectService(s.name)}
-                  className="btn-editorial w-full py-2.5 bg-[#111111] hover:bg-[#E53925] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer"
+                  className="btn-editorial w-full py-2.5 bg-[#111111] hover:bg-[#E53925] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer mt-auto"
                 >
                   <span>REQUEST QUOTE</span>
                   <ArrowUpRight className="w-4 h-4 text-[#E53925] group-hover:text-white transition-colors" />
@@ -194,7 +195,7 @@ export default function Services({ onSelectService }) {
           })}
         </div>
 
-        {/* Custom Spec Consultation Banner */}
+        {/* Custom Consultation Banner */}
         <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#DEDBD3] border-2 border-[#111111] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
           <div className="space-y-2">
             <div className="font-mono-spec text-xs text-[#E53925] font-bold uppercase">// NEED A CUSTOM MECHANICAL DIAGNOSTIC?</div>
