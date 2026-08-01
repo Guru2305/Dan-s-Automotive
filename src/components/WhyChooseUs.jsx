@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, CreditCard, Accessibility, Wrench, Smartphone, Video, Compass, Sparkles, MapPin } from 'lucide-react';
+import { ShieldCheck, CreditCard, Accessibility, Wrench, Video, Compass } from 'lucide-react';
 
 export default function WhyChooseUs() {
   const practicalities = [
@@ -42,48 +42,48 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="whyus" className="py-20 bg-[#0A0A0A] border-t border-white/10 relative grain-overlay">
+    <section id="whyus" className="py-20 bg-[#EAE6DF] border-t-2 border-[#1A1A18] relative grain-overlay">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-white/10 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-[#1A1A18]/30 pb-6">
           <div>
-            <div className="font-mono-spec text-xs text-[#C21F2E] tracking-widest uppercase font-semibold mb-2">
-              [ 04 // PRACTICALITIES & GARAGE STANDARDS ]
+            <div className="font-mono-spec text-xs text-[#C83723] tracking-widest uppercase font-semibold mb-2">
+              [ 03 // PRACTICALITIES & GARAGE STANDARDS ]
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl text-white uppercase tracking-tight">
-              WHY DRIVERS <span className="text-[#C21F2E]">CHOOSE DAN'S</span>
+            <h2 className="font-display text-4xl sm:text-6xl text-[#1A1A18] uppercase tracking-tight">
+              WHY DRIVERS <span className="text-[#C83723]">CHOOSE DAN'S</span>
             </h2>
           </div>
-          <p className="mt-4 md:mt-0 text-sm font-mono-spec text-[#9A9A95] max-w-md">
+          <p className="mt-4 md:mt-0 text-xs font-mono-spec text-[#6E6D68] max-w-md">
             EVERY DETAIL DESIGNED FOR DRIVER CONVENIENCE, ACCESSIBILITY & ABSOLUTE PEACE OF MIND.
           </p>
         </div>
 
         {/* 6 Panel Hairline Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 hairline-grid border border-white/10 bg-[#121212] mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 hairline-grid border-2 border-[#1A1A18] bg-[#F4F0E8] mb-16">
           {practicalities.map((item, i) => {
             const Icon = item.icon;
             return (
               <div 
                 key={i} 
-                className="bg-[#121212] p-6 hover:bg-[#161616] transition-colors flex flex-col justify-between group"
+                className="bg-[#F4F0E8] p-6 hover:bg-[#EAE6DF] transition-colors flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex justify-between items-center mb-4">
-                    <span className="font-mono-spec text-xs text-[#C21F2E] font-bold">{item.code}</span>
-                    <div className="p-2 bg-[#1A1A1A] border border-white/10 group-hover:border-[#C21F2E] transition-colors">
-                      <Icon className="w-5 h-5 text-[#C21F2E]" />
+                    <span className="font-mono-spec text-xs text-[#C83723] font-bold">{item.code}</span>
+                    <div className="p-2 bg-[#1A1A18] text-white group-hover:bg-[#C83723] transition-colors">
+                      <Icon className="w-5 h-5" />
                     </div>
                   </div>
-                  <h3 className="font-display text-xl text-white uppercase tracking-wide mb-2">
+                  <h3 className="font-display text-xl text-[#1A1A18] uppercase tracking-wide mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#9A9A95] font-sans-body leading-relaxed">
+                  <p className="text-xs text-[#6E6D68] font-serif-editorial leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
-                <div className="mt-6 pt-3 border-t border-white/5 font-mono-spec text-[10px] text-white/30 group-hover:text-emerald-400 transition-colors">
+                <div className="mt-6 pt-3 border-t border-[#1A1A18]/20 font-mono-spec text-[10px] text-[#1A1A18]/60 group-hover:text-[#C83723] transition-colors">
                   VERIFIED STANDARDS // 100%
                 </div>
               </div>
@@ -92,17 +92,17 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Social Credibility Highlight Slab */}
-        <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#121212] border border-white/10 p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#F4F0E8] border-2 border-[#1A1A18] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-md">
           
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-0.5 bg-[#C21F2E]/10 border border-[#C21F2E]/30 text-[#C21F2E] font-mono-spec text-xs uppercase font-bold">
+            <div className="inline-flex items-center gap-2 px-3 py-0.5 bg-[#C83723]/10 border border-[#C83723] text-[#C83723] font-mono-spec text-xs uppercase font-bold">
               <Video className="w-3.5 h-3.5" />
               <span>TIKTOK & FACEBOOK COMMUNITY</span>
             </div>
-            <h3 className="font-display text-3xl sm:text-4xl text-white uppercase tracking-wide">
+            <h3 className="font-display text-3xl sm:text-4xl text-[#1A1A18] uppercase tracking-wide">
               SEE US IN ACTION BEFORE YOU VISIT
             </h3>
-            <p className="text-sm text-[#9A9A95] font-sans-body max-w-2xl leading-relaxed">
+            <p className="text-sm text-[#6E6D68] font-serif-editorial max-w-2xl leading-relaxed">
               We post unedited footage of diagnostic challenges, wet belt overhauls, and DPF cleaning results. Join over 9,000+ followers who trust Dan's Automotive before even stepping foot in our Sittingbourne garage.
             </p>
           </div>
@@ -112,7 +112,7 @@ export default function WhyChooseUs() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-clipped px-6 py-3 bg-[#1A1A1A] hover:bg-[#C21F2E] border border-white/20 text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
+              className="btn-clipped px-6 py-3 bg-[#1A1A18] hover:bg-[#C83723] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
             >
               <span>FACEBOOK (9,000+ LIKES)</span>
             </a>
@@ -120,7 +120,7 @@ export default function WhyChooseUs() {
               href="https://tiktok.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-clipped-reverse px-6 py-3 bg-[#C21F2E] hover:bg-[#E61C24] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
+              className="btn-clipped-reverse px-6 py-3 bg-[#C83723] hover:bg-[#1A1A18] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
             >
               <span>WATCH TIKTOK VIDEOS</span>
             </a>

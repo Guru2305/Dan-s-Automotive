@@ -2,20 +2,20 @@
 
 @layer base {
   :root {
-    --ink-black: #0A0A0A;
-    --panel-black: #121212;
-    --panel-card: #161616;
-    --blood-red: #C21F2E;
-    --blood-red-bright: #E61C24;
-    --off-white: #EDEDEA;
-    --muted-grey: #9A9A95;
-    --dark-border: rgba(255, 255, 255, 0.08);
+    --paper-bg: #EAE6DF;
+    --panel-paper: #F4F0E8;
+    --panel-card: #F0ECE5;
+    --ink-black: #1A1A18;
+    --rust-red: #C83723;
+    --risograph-cyan: #6B9E9E;
+    --muted-ink: #6E6D68;
+    --border-ink: #1A1A18;
   }
 
   body {
-    background-color: var(--ink-black);
-    color: var(--off-white);
-    font-family: 'Inter', sans-serif;
+    background-color: var(--paper-bg);
+    color: var(--ink-black);
+    font-family: 'Newsreader', serif;
     overflow-x: hidden;
   }
 }
@@ -23,8 +23,12 @@
 /* Custom Typography Utilities */
 .font-display {
   font-family: 'Anton', sans-serif;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.font-serif-editorial {
+  font-family: 'Newsreader', serif;
 }
 
 .font-mono-spec {
@@ -35,12 +39,12 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Film Grain Texture Overlay */
+/* Tactile Paper Texture Overlay */
 .grain-overlay {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
 }
 
-/* Corner Crop-Mark Brackets (Photography Contact Sheet Aesthetic) */
+/* Contact Sheet Crop-Mark Brackets (Broadsheet / Print Aesthetic) */
 .crop-bracket-container {
   position: relative;
 }
@@ -57,90 +61,96 @@
 
 /* Top-Left & Top-Right Crop Marks */
 .crop-marks-top::before {
-  top: 8px;
-  left: 8px;
-  border-top: 2px solid #C21F2E;
-  border-left: 2px solid #C21F2E;
+  top: 6px;
+  left: 6px;
+  border-top: 2px solid #1A1A18;
+  border-left: 2px solid #1A1A18;
 }
 
 .crop-marks-top::after {
-  top: 8px;
-  right: 8px;
-  border-top: 2px solid #C21F2E;
-  border-right: 2px solid #C21F2E;
+  top: 6px;
+  right: 6px;
+  border-top: 2px solid #1A1A18;
+  border-right: 2px solid #1A1A18;
 }
 
 /* Bottom-Left & Bottom-Right Crop Marks */
 .crop-marks-bottom::before {
-  bottom: 8px;
-  left: 8px;
-  border-bottom: 2px solid #C21F2E;
-  border-left: 2px solid #C21F2E;
+  bottom: 6px;
+  left: 6px;
+  border-bottom: 2px solid #1A1A18;
+  border-left: 2px solid #1A1A18;
 }
 
 .crop-marks-bottom::after {
-  bottom: 8px;
-  right: 8px;
-  border-bottom: 2px solid #C21F2E;
-  border-right: 2px solid #C21F2E;
+  bottom: 6px;
+  right: 6px;
+  border-bottom: 2px solid #1A1A18;
+  border-right: 2px solid #1A1A18;
 }
 
-/* White / Light Variant Corner Brackets */
-.crop-marks-white::before {
-  top: 10px;
-  left: 10px;
-  border-top: 2px solid rgba(255, 255, 255, 0.4);
-  border-left: 2px solid rgba(255, 255, 255, 0.4);
-}
-.crop-marks-white::after {
-  top: 10px;
-  right: 10px;
-  border-top: 2px solid rgba(255, 255, 255, 0.4);
-  border-right: 2px solid rgba(255, 255, 255, 0.4);
+/* Risograph / Screen-Print Offset Layered Text Effect */
+.risograph-headline {
+  position: relative;
+  display: inline-block;
 }
 
-/* Angled / Clipped Button Edges */
+.risograph-shadow-cyan {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  color: #6B9E9E;
+  opacity: 0.85;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.risograph-shadow-red {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  color: #C83723;
+  opacity: 0.85;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.risograph-main-text {
+  position: relative;
+  z-index: 1;
+  color: #1A1A18;
+}
+
+/* Angled / Clipped Editorial Buttons */
 .btn-clipped {
-  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-clipped-reverse {
-  clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.panel-clipped {
-  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
-}
-
-/* Diagonal Red Clip-Path Slab (Hero visual move) */
-.hero-red-slab {
-  clip-path: polygon(12% 0%, 100% 0%, 88% 100%, 0% 100%);
-  background: linear-gradient(135deg, #C21F2E 0%, #8A000E 100%);
-}
-
-.hero-red-slab-sharp {
-  clip-path: polygon(20px 0, 100% 0, calc(100% - 40px) 100%, 0 100%);
-}
-
-/* Custom Scrollbar for Spec Vibe */
+/* Custom Scrollbar for Broadsheet Spec */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #EAE6DF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C21F2E;
+  background: #1A1A18;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #E61C24;
+  background: #C83723;
 }
 
 /* Hairline Grid Helper */
 .hairline-grid {
   display: grid;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: #1A1A18;
   gap: 1px;
 }
