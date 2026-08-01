@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrench, ArrowRight, Phone, CheckCircle2, Cpu, ShieldCheck, Star, ThumbsUp } from 'lucide-react';
+import { Wrench, ArrowRight, Phone, CheckCircle2, Cpu } from 'lucide-react';
 
 export default function Hero({ onOpenBooking }) {
   return (
@@ -22,7 +22,7 @@ export default function Hero({ onOpenBooking }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Clean Editorial Headline Stack */}
+          {/* Left Column: Pixel-Perfect Layered Dual-Tone Typography Stack (Matching user screenshot) */}
           <div className="lg:col-span-7 space-y-6">
             
             {/* Status Pill */}
@@ -33,19 +33,59 @@ export default function Hero({ onOpenBooking }) {
               <span className="text-[#E53925] font-bold">EST. SITTINGBOURNE</span>
             </div>
 
-            {/* Clean Stacked Display Headline */}
-            <div className="space-y-1">
-              <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl leading-none uppercase text-[#111111] tracking-tight">
-                DON'T SCRAP IT.
-              </h1>
-              <h1 className="font-display text-6xl sm:text-8xl lg:text-9xl leading-none uppercase text-[#E53925] tracking-tight">
-                FIX IT.
-              </h1>
-              <div className="pt-2 border-t-2 border-[#111111] mt-3">
+            {/* Headline Stack with Exact Offset Ghost Layers */}
+            <div className="space-y-1 sm:space-y-2 py-2">
+              
+              {/* Row 1: DON'T */}
+              <div className="relative inline-block leading-none">
+                <span 
+                  aria-hidden="true" 
+                  className="absolute -left-3 sm:-left-5 -top-2 sm:-top-3 font-display text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tight text-[#6B9A9B] opacity-60 select-none pointer-events-none"
+                >
+                  DON'T
+                </span>
+                <h1 className="relative z-10 font-display text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tight text-[#111111]">
+                  DON'T
+                </h1>
+              </div>
+
+              <br />
+
+              {/* Row 2: SCRAP IT. (or BIN IT. with faded red ghost) */}
+              <div className="relative inline-block leading-none">
+                <span 
+                  aria-hidden="true" 
+                  className="absolute -left-2 sm:-left-3 top-2 sm:top-3 font-display text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tight text-[#E88C83] opacity-70 select-none pointer-events-none"
+                >
+                  SCRAP IT.
+                </span>
+                <h1 className="relative z-10 font-display text-6xl sm:text-8xl lg:text-9xl uppercase tracking-tight text-[#111111]">
+                  SCRAP IT.
+                </h1>
+              </div>
+
+              <br />
+
+              {/* Row 3: FIX IT. (in Vermillion Red with Cyan ghost) */}
+              <div className="relative inline-block leading-none">
+                <span 
+                  aria-hidden="true" 
+                  className="absolute -left-4 sm:-left-6 -top-2 sm:-top-3 font-display text-7xl sm:text-9xl lg:text-[10rem] uppercase tracking-tight text-[#6B9A9B] opacity-75 select-none pointer-events-none"
+                >
+                  FIX IT.
+                </span>
+                <h1 className="relative z-10 font-display text-7xl sm:text-9xl lg:text-[10rem] uppercase tracking-tight text-[#E53925]">
+                  FIX IT.
+                </h1>
+              </div>
+
+              {/* Sub-headline Banner */}
+              <div className="pt-4 border-t-2 border-[#111111]">
                 <h2 className="font-display text-2xl sm:text-4xl text-[#111111] uppercase tracking-wide">
-                  HONEST WORK. NO EXCUSES.
+                  THE RIGHT TO REPAIR WHAT IS YOURS.
                 </h2>
               </div>
+
             </div>
 
             {/* Editorial Body Copy */}
