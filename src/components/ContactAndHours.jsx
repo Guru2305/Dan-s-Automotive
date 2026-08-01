@@ -60,17 +60,17 @@ export default function ContactAndHours({ onOpenBooking }) {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-[#EAE6DF] border-t-2 border-[#1A1A18] relative grain-overlay">
+    <section id="contact" className="py-20 bg-[#E5E3DC] text-[#111111] border-t-2 border-[#111111] relative newsprint-grain">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-[#1A1A18]/30 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-[#111111] pb-6">
           <div>
-            <div className="font-mono-spec text-xs text-[#C83723] tracking-widest uppercase font-semibold mb-2 flex items-center gap-2">
-              <span>[ 05 // LOCATION, OPERATING HOURS & DIRECT DISPATCH ]</span>
+            <div className="font-mono-spec text-xs text-[#E53925] tracking-widest uppercase font-bold mb-2 flex items-center gap-2">
+              <span>[ 06 // LOCATION, HOURS & DIRECT CONTACT ]</span>
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl text-[#1A1A18] uppercase tracking-tight">
-              FIND US IN <span className="text-[#C83723]">SITTINGBOURNE</span>
+            <h2 className="font-display text-4xl sm:text-6xl text-[#111111] uppercase tracking-tight">
+              FIND US IN <span className="text-[#E53925]">SITTINGBOURNE</span>
             </h2>
           </div>
           
@@ -78,43 +78,43 @@ export default function ContactAndHours({ onOpenBooking }) {
           <div className="mt-4 md:mt-0 flex items-center gap-3">
             <div className={`px-4 py-2 border-2 font-mono-spec text-xs uppercase font-bold flex items-center gap-2 ${
               isOpenNow 
-                ? 'bg-emerald-500/10 border-emerald-600 text-emerald-800'
-                : 'bg-[#C83723]/10 border-[#C83723] text-[#C83723]'
+                ? 'bg-emerald-500/10 border-emerald-600 text-emerald-700'
+                : 'bg-[#E53925]/10 border-[#E53925] text-[#E53925]'
             }`}>
-              <span className={`w-2.5 h-2.5 rounded-full ${isOpenNow ? 'bg-emerald-600 animate-pulse' : 'bg-[#C83723]'}`}></span>
+              <span className={`w-2.5 h-2.5 rounded-full ${isOpenNow ? 'bg-emerald-600 animate-pulse' : 'bg-[#E53925]'}`}></span>
               <span>WORKSHOP STATUS: {isOpenNow ? 'OPEN NOW' : 'CLOSED NOW'}</span>
             </div>
-            <span className="font-mono-spec text-xs text-[#6E6D68] hidden xl:inline">{ukTimeStr}</span>
+            <span className="font-mono-spec text-xs text-[#555550] font-bold hidden xl:inline">{ukTimeStr}</span>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
           
-          {/* Left Column: Hours Spec Table + Location */}
+          {/* Left Column: Opening Hours Engine Plate + Location Spec */}
           <div className="lg:col-span-6 space-y-6">
             
             {/* Opening Hours Spec Table Frame */}
-            <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#F4F0E8] border-2 border-[#1A1A18] p-5 shadow-md">
+            <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#DEDBD3] border-2 border-[#111111] p-5 shadow-xl">
               
-              <div className="flex justify-between items-center pb-3 mb-4 border-b border-[#1A1A18]/20 font-mono-spec text-xs">
-                <span className="text-[#C83723] font-bold flex items-center gap-1.5">
+              <div className="flex justify-between items-center pb-3 mb-4 border-b border-[#111111] font-mono-spec text-xs font-bold">
+                <span className="text-[#E53925] flex items-center gap-1.5">
                   <Clock className="w-4 h-4" /> OPERATING HOURS SPEC PLATE
                 </span>
-                <span className="text-[#6E6D68]">NEWINGTON WORKSHOP</span>
+                <span className="text-[#555550]">NEWINGTON WORKSHOP</span>
               </div>
 
-              <div className="divide-y divide-[#1A1A18]/10 font-mono-spec text-xs">
+              <div className="divide-y divide-[#111111]/10 font-mono-spec text-xs">
                 {scheduleHours.map((sh, idx) => (
-                  <div key={idx} className="py-2.5 flex justify-between items-center hover:bg-[#EAE6DF] px-2 transition-colors">
-                    <span className="text-[#1A1A18] font-bold">{sh.day}</span>
+                  <div key={idx} className="py-2.5 flex justify-between items-center hover:bg-[#111111]/5 px-2 transition-colors">
+                    <span className="text-[#111111] font-bold">{sh.day}</span>
                     <div className="flex items-center gap-4">
-                      <span className={sh.hours === 'CLOSED' ? 'text-[#C83723] font-bold' : 'text-[#1A1A18]'}>
+                      <span className={sh.hours === 'CLOSED' ? 'text-[#E53925] font-bold' : 'text-[#111111] font-medium'}>
                         {sh.hours}
                       </span>
                       <span className={`text-[10px] px-2 py-0.5 font-bold ${
-                        sh.status === 'OPEN' ? 'bg-emerald-500/20 text-emerald-800' :
-                        sh.status === 'HALF DAY' ? 'bg-amber-500/20 text-amber-900' :
-                        'bg-red-500/20 text-red-900'
+                        sh.status === 'OPEN' ? 'bg-emerald-600/20 text-emerald-800 border border-emerald-700' :
+                        sh.status === 'HALF DAY' ? 'bg-amber-500/20 text-amber-900 border border-amber-700' :
+                        'bg-red-500/20 text-red-800 border border-red-700'
                       }`}>
                         {sh.status}
                       </span>
@@ -123,46 +123,46 @@ export default function ContactAndHours({ onOpenBooking }) {
                 ))}
               </div>
 
-              <div className="mt-4 pt-3 border-t border-[#1A1A18]/20 flex justify-between items-center font-mono-spec text-[11px] text-[#6E6D68]">
+              <div className="mt-4 pt-3 border-t border-[#111111]/20 flex justify-between items-center font-mono-spec text-[11px] text-[#555550] font-bold">
                 <span>ON-SITE EMERGENCY DROP-OFF AVAILABLE</span>
-                <span className="text-[#1A1A18] font-bold">SAT APPOINTMENTS RECOMMENDED</span>
+                <span className="text-[#111111]">SAT APPOINTMENTS RECOMMENDED</span>
               </div>
 
             </div>
 
-            {/* Address Box */}
-            <div className="p-6 bg-[#F4F0E8] border-2 border-[#1A1A18] space-y-4 font-mono-spec text-xs shadow-sm">
-              <div className="text-xs text-[#C83723] font-bold uppercase">// ADDRESS & DIRECTION SPEC</div>
+            {/* Address & Practicalities Box */}
+            <div className="p-6 bg-[#DEDBD3] border-2 border-[#111111] space-y-4 font-mono-spec text-xs">
+              <div className="text-xs text-[#E53925] font-bold uppercase">// ADDRESS & DIRECTION SPEC</div>
               
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#C83723] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#E53925] shrink-0 mt-0.5" />
                 <div>
-                  <span className="text-[#1A1A18] font-bold block text-sm">DAN'S AUTOMOTIVE SERVICES</span>
-                  <span className="text-[#1A1A18] block">Unit 1, 172a New Farm, High Street</span>
-                  <span className="text-[#1A1A18] block">Newington, Sittingbourne, Kent ME9 7JH, UK</span>
-                  <span className="text-[#6E6D68] text-[11px] mt-1 block">Easy access off A2 High Street in Newington</span>
+                  <span className="text-[#111111] font-bold block text-sm">DAN'S AUTOMOTIVE SERVICES</span>
+                  <span className="text-[#111111] block font-medium">Unit 1, 172a New Farm, High Street</span>
+                  <span className="text-[#111111] block font-medium">Newington, Sittingbourne, Kent ME9 7JH, UK</span>
+                  <span className="text-[#555550] text-[11px] mt-1 block font-bold">Easy access off A2 High Street in Newington</span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 pt-3 border-t border-[#1A1A18]/20">
-                <Phone className="w-5 h-5 text-[#C83723] shrink-0" />
+              <div className="flex items-center gap-3 pt-3 border-t border-[#111111]/10">
+                <Phone className="w-5 h-5 text-[#E53925] shrink-0" />
                 <div>
-                  <span className="text-[#6E6D68] block text-[10px]">DIRECT PHONE / WHATSAPP:</span>
-                  <a href="tel:+447487575483" className="text-[#1A1A18] font-bold text-base hover:text-[#C83723] transition-colors">
-                    +44 7487 575483 <span className="text-xs text-[#6E6D68]">(07487 575483)</span>
+                  <span className="text-[#555550] block text-[10px] font-bold">DIRECT PHONE / WHATSAPP:</span>
+                  <a href="tel:+447487575483" className="text-[#111111] font-bold text-base hover:text-[#E53925] transition-colors">
+                    +44 7487 575483 <span className="text-xs text-[#555550]">(07487 575483)</span>
                   </a>
                 </div>
               </div>
 
               {/* Payment & Accessibility Tags */}
-              <div className="pt-4 border-t border-[#1A1A18]/20 grid grid-cols-2 gap-3 text-[11px] text-[#6E6D68]">
+              <div className="pt-4 border-t border-[#111111]/10 grid grid-cols-2 gap-3 text-[11px] text-[#555550] font-bold">
                 <div className="flex items-center gap-2">
-                  <Accessibility className="w-4 h-4 text-[#6B9E9E] shrink-0" />
-                  <span className="text-[#1A1A18]">Wheelchair Park & Step-Free</span>
+                  <Accessibility className="w-4 h-4 text-emerald-700 shrink-0" />
+                  <span>Wheelchair Park & Step-Free Entrance</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CreditCard className="w-4 h-4 text-[#C83723] shrink-0" />
-                  <span className="text-[#1A1A18]">Cards, Apple Pay & Contactless</span>
+                  <CreditCard className="w-4 h-4 text-[#E53925] shrink-0" />
+                  <span>Cards, Apple Pay & Contactless NFC</span>
                 </div>
               </div>
 
@@ -172,19 +172,19 @@ export default function ContactAndHours({ onOpenBooking }) {
 
           {/* Right Column: Direct Workshop Message Form */}
           <div className="lg:col-span-6">
-            <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#F4F0E8] border-2 border-[#1A1A18] p-6 sm:p-8 shadow-md h-full flex flex-col justify-between">
+            <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#DEDBD3] border-2 border-[#111111] p-6 sm:p-8 shadow-xl h-full flex flex-col justify-between">
               
               <div>
-                <div className="flex justify-between items-center pb-3 mb-6 border-b border-[#1A1A18]/20 font-mono-spec text-xs">
-                  <span className="text-[#C83723] font-bold uppercase">// DIRECT WORKSHOP DISPATCH INQUIRY</span>
-                  <span className="text-[#6E6D68]">FAST RESPONSE</span>
+                <div className="flex justify-between items-center pb-3 mb-6 border-b border-[#111111] font-mono-spec text-xs font-bold">
+                  <span className="text-[#E53925] uppercase">// DIRECT WORKSHOP INQUIRY</span>
+                  <span className="text-[#555550]">FAST RESPONSE</span>
                 </div>
 
                 {formSubmitted ? (
-                  <div className="p-8 bg-emerald-500/10 border-2 border-emerald-600 text-center space-y-4 my-8">
+                  <div className="p-8 bg-emerald-600/10 border-2 border-emerald-700 text-center space-y-4 my-8">
                     <CheckCircle2 className="w-12 h-12 text-emerald-700 mx-auto" />
-                    <h4 className="font-display text-2xl text-[#1A1A18] uppercase">INQUIRY RECEIVED</h4>
-                    <p className="font-mono-spec text-xs text-[#1A1A18]">
+                    <h4 className="font-display text-2xl text-[#111111] uppercase">INQUIRY RECEIVED</h4>
+                    <p className="font-mono-spec text-xs text-[#111111] font-bold">
                       Thank you! Dan or Jenna will review your vehicle details and call you back shortly on the phone number provided.
                     </p>
                   </div>
@@ -193,46 +193,46 @@ export default function ContactAndHours({ onOpenBooking }) {
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[#6E6D68] uppercase mb-1">YOUR NAME *</label>
+                        <label className="block text-[#555550] uppercase mb-1 font-bold">YOUR NAME *</label>
                         <input
                           type="text"
                           required
                           value={formData.name}
                           onChange={e => setFormData({ ...formData, name: e.target.value })}
                           placeholder="e.g. Marcus Vance"
-                          className="w-full bg-[#EAE6DF] border border-[#1A1A18] focus:border-[#C83723] p-3 text-[#1A1A18] focus:outline-none"
+                          className="w-full bg-[#E5E3DC] border border-[#111111] focus:border-[#E53925] p-3 text-[#111111] focus:outline-none font-bold"
                         />
                       </div>
                       <div>
-                        <label className="block text-[#6E6D68] uppercase mb-1">PHONE NUMBER *</label>
+                        <label className="block text-[#555550] uppercase mb-1 font-bold">PHONE NUMBER *</label>
                         <input
                           type="tel"
                           required
                           value={formData.phone}
                           onChange={e => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="e.g. 07700 900123"
-                          className="w-full bg-[#EAE6DF] border border-[#1A1A18] focus:border-[#C83723] p-3 text-[#1A1A18] focus:outline-none"
+                          className="w-full bg-[#E5E3DC] border border-[#111111] focus:border-[#E53925] p-3 text-[#111111] focus:outline-none font-bold"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-[#6E6D68] uppercase mb-1">VEHICLE REGISTRATION</label>
+                        <label className="block text-[#555550] uppercase mb-1 font-bold">VEHICLE REGISTRATION</label>
                         <input
                           type="text"
                           value={formData.vehicleReg}
                           onChange={e => setFormData({ ...formData, vehicleReg: e.target.value.toUpperCase() })}
                           placeholder="e.g. GK70 ABC"
-                          className="w-full bg-[#EAE6DF] border border-[#1A1A18] focus:border-[#C83723] p-3 text-[#1A1A18] font-bold uppercase tracking-wider focus:outline-none"
+                          className="w-full bg-[#F7D117] border border-[#111111] focus:border-[#E53925] p-3 text-[#111111] font-extrabold uppercase tracking-wider focus:outline-none"
                         />
                       </div>
                       <div>
-                        <label className="block text-[#6E6D68] uppercase mb-1">SERVICE TYPE</label>
+                        <label className="block text-[#555550] uppercase mb-1 font-bold">SERVICE TYPE</label>
                         <select
                           value={formData.service}
                           onChange={e => setFormData({ ...formData, service: e.target.value })}
-                          className="w-full bg-[#EAE6DF] border border-[#1A1A18] focus:border-[#C83723] p-3 text-[#1A1A18] focus:outline-none"
+                          className="w-full bg-[#E5E3DC] border border-[#111111] focus:border-[#E53925] p-3 text-[#111111] focus:outline-none font-bold"
                         >
                           <option value="General Service / MOT">General Service / MOT</option>
                           <option value="Engine Diagnostics">Engine Diagnostics</option>
@@ -246,20 +246,20 @@ export default function ContactAndHours({ onOpenBooking }) {
                     </div>
 
                     <div>
-                      <label className="block text-[#6E6D68] uppercase mb-1">YOUR MESSAGE / SYMPTOMS</label>
+                      <label className="block text-[#555550] uppercase mb-1 font-bold">YOUR MESSAGE / SYMPTOMS</label>
                       <textarea
                         rows={4}
                         required
                         value={formData.message}
                         onChange={e => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Describe any warning lights, noises, or services required..."
-                        className="w-full bg-[#EAE6DF] border border-[#1A1A18] focus:border-[#C83723] p-3 text-[#1A1A18] focus:outline-none"
+                        className="w-full bg-[#E5E3DC] border border-[#111111] focus:border-[#E53925] p-3 text-[#111111] focus:outline-none font-medium"
                       ></textarea>
                     </div>
 
                     <button
                       type="submit"
-                      className="btn-clipped w-full py-3.5 bg-[#C83723] hover:bg-[#1A1A18] text-white font-mono-spec text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm"
+                      className="btn-editorial w-full py-3.5 bg-[#E53925] hover:bg-[#CC2D1B] text-white font-mono-spec text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md"
                     >
                       <Send className="w-4 h-4" />
                       <span>SEND INQUIRY TO DAN & JENNA</span>
@@ -269,9 +269,9 @@ export default function ContactAndHours({ onOpenBooking }) {
                 )}
               </div>
 
-              <div className="mt-6 pt-4 border-t border-[#1A1A18]/20 flex justify-between items-center font-mono-spec text-[10px] text-[#6E6D68]">
+              <div className="mt-6 pt-4 border-t border-[#111111]/20 flex justify-between items-center font-mono-spec text-[10px] text-[#555550] font-bold">
                 <span>NO SPAM GUARANTEE</span>
-                <span className="text-[#1A1A18] font-bold">DIRECT PHONE: 07487 575483</span>
+                <span>DIRECT PHONE SUPPORT: 07487 575483</span>
               </div>
 
             </div>

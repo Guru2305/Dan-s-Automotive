@@ -4,37 +4,37 @@ import { ShieldCheck, CreditCard, Accessibility, Wrench, Video, Compass } from '
 export default function WhyChooseUs() {
   const practicalities = [
     {
-      code: 'PRAC // 01',
+      code: '01 —',
       title: 'ZERO UNNECESSARY WORK',
       desc: 'We never upsell or perform unneeded parts replacements. We show you the old part and explain why it failed.',
       icon: ShieldCheck,
     },
     {
-      code: 'PRAC // 02',
+      code: '02 —',
       title: 'WHEELCHAIR ACCESSIBLE',
       desc: 'Step-free entrance and designated accessible parking bay right outside our workshop reception.',
       icon: Accessibility,
     },
     {
-      code: 'PRAC // 03',
+      code: '03 —',
       title: '100% ON-SITE REPAIRS',
       desc: 'No outsourcing to third parties. All diagnostics, engine overhauls, and repairs happen directly in our Sittingbourne unit.',
       icon: Wrench,
     },
     {
-      code: 'PRAC // 04',
+      code: '04 —',
       title: 'CONTACTLESS & CARD PAYMENTS',
       desc: 'We accept major credit cards, debit cards, Apple Pay, Google Pay, and contactless NFC mobile payments.',
       icon: CreditCard,
     },
     {
-      code: 'PRAC // 05',
+      code: '05 —',
       title: 'CUSTOM TEST DRIVES WITH DAN',
       desc: 'Have a weird noise or vibration? Dan will join you in the car to diagnose it in real driving conditions.',
       icon: Compass,
     },
     {
-      code: 'PRAC // 06',
+      code: '06 —',
       title: 'ACTIVE TIKTOK & FACEBOOK SOCIALS',
       desc: 'Watch real workshop breakdowns, DPF cleans, and wet belt overhauls on our social channels before you visit.',
       icon: Video,
@@ -42,48 +42,48 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="whyus" className="py-20 bg-[#EAE6DF] border-t-2 border-[#1A1A18] relative grain-overlay">
+    <section id="whyus" className="py-20 bg-[#E5E3DC] text-[#111111] border-t-2 border-[#111111] relative newsprint-grain">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-[#1A1A18]/30 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-[#111111] pb-6">
           <div>
-            <div className="font-mono-spec text-xs text-[#C83723] tracking-widest uppercase font-semibold mb-2">
-              [ 03 // PRACTICALITIES & GARAGE STANDARDS ]
+            <div className="font-mono-spec text-xs text-[#E53925] tracking-widest uppercase font-bold mb-2">
+              [ 04 // PRACTICALITIES & GARAGE STANDARDS ]
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl text-[#1A1A18] uppercase tracking-tight">
-              WHY DRIVERS <span className="text-[#C83723]">CHOOSE DAN'S</span>
+            <h2 className="font-display text-4xl sm:text-6xl text-[#111111] uppercase tracking-tight">
+              WHY DRIVERS <span className="text-[#E53925]">CHOOSE DAN'S</span>
             </h2>
           </div>
-          <p className="mt-4 md:mt-0 text-xs font-mono-spec text-[#6E6D68] max-w-md">
+          <p className="mt-4 md:mt-0 text-sm font-mono-spec text-[#555550] max-w-md font-bold">
             EVERY DETAIL DESIGNED FOR DRIVER CONVENIENCE, ACCESSIBILITY & ABSOLUTE PEACE OF MIND.
           </p>
         </div>
 
-        {/* 6 Panel Hairline Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 hairline-grid border-2 border-[#1A1A18] bg-[#F4F0E8] mb-16">
+        {/* 6 Panel Hairline Light Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 hairline-grid-light border-2 border-[#111111] bg-[#DEDBD3] mb-16">
           {practicalities.map((item, i) => {
             const Icon = item.icon;
             return (
               <div 
                 key={i} 
-                className="bg-[#F4F0E8] p-6 hover:bg-[#EAE6DF] transition-colors flex flex-col justify-between group"
+                className="bg-[#E5E3DC] p-6 hover:bg-[#DEDBD3] transition-colors flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex justify-between items-center mb-4">
-                    <span className="font-mono-spec text-xs text-[#C83723] font-bold">{item.code}</span>
-                    <div className="p-2 bg-[#1A1A18] text-white group-hover:bg-[#C83723] transition-colors">
+                    <span className="font-mono-spec text-base text-[#E53925] font-bold">{item.code}</span>
+                    <div className="p-2 bg-[#111111] text-white group-hover:bg-[#E53925] transition-colors">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
-                  <h3 className="font-display text-xl text-[#1A1A18] uppercase tracking-wide mb-2">
+                  <h3 className="font-display text-xl text-[#111111] uppercase tracking-wide mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#6E6D68] font-serif-editorial leading-relaxed">
+                  <p className="text-xs text-[#555550] font-sans-body leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
-                <div className="mt-6 pt-3 border-t border-[#1A1A18]/20 font-mono-spec text-[10px] text-[#1A1A18]/60 group-hover:text-[#C83723] transition-colors">
+                <div className="mt-6 pt-3 border-t border-[#111111]/10 font-mono-spec text-[10px] text-[#111111]/60 font-bold group-hover:text-[#E53925] transition-colors">
                   VERIFIED STANDARDS // 100%
                 </div>
               </div>
@@ -92,17 +92,17 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Social Credibility Highlight Slab */}
-        <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#F4F0E8] border-2 border-[#1A1A18] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-md">
+        <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#DEDBD3] border-2 border-[#111111] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-md">
           
           <div className="space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-0.5 bg-[#C83723]/10 border border-[#C83723] text-[#C83723] font-mono-spec text-xs uppercase font-bold">
+            <div className="inline-flex items-center gap-2 px-3 py-0.5 bg-[#E53925]/10 border border-[#E53925] text-[#E53925] font-mono-spec text-xs uppercase font-bold">
               <Video className="w-3.5 h-3.5" />
               <span>TIKTOK & FACEBOOK COMMUNITY</span>
             </div>
-            <h3 className="font-display text-3xl sm:text-4xl text-[#1A1A18] uppercase tracking-wide">
+            <h3 className="font-display text-3xl sm:text-4xl text-[#111111] uppercase tracking-wide">
               SEE US IN ACTION BEFORE YOU VISIT
             </h3>
-            <p className="text-sm text-[#6E6D68] font-serif-editorial max-w-2xl leading-relaxed">
+            <p className="text-sm text-[#555550] font-sans-body max-w-2xl leading-relaxed font-medium">
               We post unedited footage of diagnostic challenges, wet belt overhauls, and DPF cleaning results. Join over 9,000+ followers who trust Dan's Automotive before even stepping foot in our Sittingbourne garage.
             </p>
           </div>
@@ -112,7 +112,7 @@ export default function WhyChooseUs() {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-clipped px-6 py-3 bg-[#1A1A18] hover:bg-[#C83723] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
+              className="btn-editorial px-6 py-3 bg-[#111111] hover:bg-[#222222] text-[#E5E3DC] font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
             >
               <span>FACEBOOK (9,000+ LIKES)</span>
             </a>
@@ -120,7 +120,7 @@ export default function WhyChooseUs() {
               href="https://tiktok.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-clipped-reverse px-6 py-3 bg-[#C83723] hover:bg-[#1A1A18] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
+              className="btn-editorial-reverse px-6 py-3 bg-[#E53925] hover:bg-[#CC2D1B] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all cursor-pointer"
             >
               <span>WATCH TIKTOK VIDEOS</span>
             </a>

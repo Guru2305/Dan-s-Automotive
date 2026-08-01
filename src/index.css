@@ -2,33 +2,29 @@
 
 @layer base {
   :root {
-    --paper-bg: #EAE6DF;
-    --panel-paper: #F4F0E8;
-    --panel-card: #F0ECE5;
-    --ink-black: #1A1A18;
-    --rust-red: #C83723;
-    --risograph-cyan: #6B9E9E;
-    --muted-ink: #6E6D68;
-    --border-ink: #1A1A18;
+    --bg-newsprint: #E5E3DC;
+    --panel-newsprint: #DEDBD3;
+    --text-ink: #111111;
+    --text-muted: #555550;
+    --accent-red: #E53925;
+    --accent-red-hover: #CC2D1B;
+    --ghost-cyan: #6B9A9B;
+    --border-hairline: rgba(17, 17, 17, 0.15);
   }
 
   body {
-    background-color: var(--paper-bg);
-    color: var(--ink-black);
-    font-family: 'Newsreader', serif;
+    background-color: var(--bg-newsprint);
+    color: var(--text-ink);
+    font-family: 'Inter', sans-serif;
     overflow-x: hidden;
   }
 }
 
-/* Custom Typography Utilities */
+/* Custom Editorial Typography Utilities */
 .font-display {
   font-family: 'Anton', sans-serif;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-}
-
-.font-serif-editorial {
-  font-family: 'Newsreader', serif;
 }
 
 .font-mono-spec {
@@ -39,12 +35,12 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Tactile Paper Texture Overlay */
-.grain-overlay {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+/* Texture Overlay */
+.newsprint-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E");
 }
 
-/* Contact Sheet Crop-Mark Brackets (Broadsheet / Print Aesthetic) */
+/* Corner Crop-Mark Brackets */
 .crop-bracket-container {
   position: relative;
 }
@@ -53,104 +49,113 @@
 .crop-bracket-container::after {
   content: '';
   position: absolute;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   pointer-events: none;
   z-index: 10;
 }
 
-/* Top-Left & Top-Right Crop Marks */
 .crop-marks-top::before {
-  top: 6px;
-  left: 6px;
-  border-top: 2px solid #1A1A18;
-  border-left: 2px solid #1A1A18;
+  top: 8px;
+  left: 8px;
+  border-top: 2px solid #111111;
+  border-left: 2px solid #111111;
 }
 
 .crop-marks-top::after {
-  top: 6px;
-  right: 6px;
-  border-top: 2px solid #1A1A18;
-  border-right: 2px solid #1A1A18;
+  top: 8px;
+  right: 8px;
+  border-top: 2px solid #111111;
+  border-right: 2px solid #111111;
 }
 
-/* Bottom-Left & Bottom-Right Crop Marks */
 .crop-marks-bottom::before {
-  bottom: 6px;
-  left: 6px;
-  border-bottom: 2px solid #1A1A18;
-  border-left: 2px solid #1A1A18;
+  bottom: 8px;
+  left: 8px;
+  border-bottom: 2px solid #111111;
+  border-left: 2px solid #111111;
 }
 
 .crop-marks-bottom::after {
-  bottom: 6px;
-  right: 6px;
-  border-bottom: 2px solid #1A1A18;
-  border-right: 2px solid #1A1A18;
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 2px solid #111111;
+  border-right: 2px solid #111111;
 }
 
-/* Risograph / Screen-Print Offset Layered Text Effect */
-.risograph-headline {
-  position: relative;
-  display: inline-block;
+/* Red Variant Crop Marks */
+.crop-marks-red::before {
+  top: 8px;
+  left: 8px;
+  border-top: 2px solid #E53925;
+  border-left: 2px solid #E53925;
+}
+.crop-marks-red::after {
+  top: 8px;
+  right: 8px;
+  border-top: 2px solid #E53925;
+  border-right: 2px solid #E53925;
 }
 
-.risograph-shadow-cyan {
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  color: #6B9E9E;
-  opacity: 0.85;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-}
-
-.risograph-shadow-red {
-  position: absolute;
-  bottom: -6px;
-  right: -6px;
-  color: #C83723;
-  opacity: 0.85;
-  z-index: 0;
-  pointer-events: none;
-  user-select: none;
-}
-
-.risograph-main-text {
-  position: relative;
-  z-index: 1;
-  color: #1A1A18;
-}
-
-/* Angled / Clipped Editorial Buttons */
-.btn-clipped {
+/* Angled Button Edges */
+.btn-editorial {
   clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-clipped-reverse {
+.btn-editorial-reverse {
   clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Custom Scrollbar for Broadsheet Spec */
+/* Layered Ghost Text Effect (Cyan / Muted Teal offset behind headline) */
+.ghost-text-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.ghost-text-cyan {
+  position: absolute;
+  top: -6px;
+  left: -5px;
+  color: #6B9A9B;
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.ghost-text-red {
+  color: #E53925;
+}
+
+
+/* Paper Ticker Tape Effect */
+.paper-ticker {
+  background: #DEDBD3;
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+  transform: rotate(-0.5deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #EAE6DF;
+  background: #E5E3DC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1A1A18;
+  background: #E53925;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C83723;
+  background: #CC2D1B;
 }
 
 /* Hairline Grid Helper */
-.hairline-grid {
+.hairline-grid-light {
   display: grid;
-  background-color: #1A1A18;
+  background-color: rgba(17, 17, 17, 0.15);
   gap: 1px;
 }

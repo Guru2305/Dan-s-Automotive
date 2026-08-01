@@ -4,7 +4,7 @@ import { Cpu, Wrench, ShieldAlert, Gauge, Wind, Disc, ArrowUpRight, Activity, Za
 export default function Services({ onSelectService }) {
   const serviceList = [
     {
-      code: 'SPEC Nº 01',
+      code: '01 —',
       id: 'diagnostics',
       name: 'ENGINE DIAGNOSTICS & ELECTRICAL',
       icon: Cpu,
@@ -16,7 +16,7 @@ export default function Services({ onSelectService }) {
       highlights: ['OEM Diagnostic Tools', 'Live Data Log', 'Clear Root-Cause Report'],
     },
     {
-      code: 'SPEC Nº 02',
+      code: '02 —',
       id: 'mot-servicing',
       name: 'SERVICING & MOT PREPARATION',
       icon: Wrench,
@@ -28,7 +28,7 @@ export default function Services({ onSelectService }) {
       highlights: ['Digital Service Logged', 'Filter & Oil Flush', 'MOT Pre-Check Included'],
     },
     {
-      code: 'SPEC Nº 03',
+      code: '03 —',
       id: 'dpf-cleaning',
       name: 'DPF CLEANING & REGENERATION',
       icon: ShieldAlert,
@@ -40,7 +40,7 @@ export default function Services({ onSelectService }) {
       highlights: ['Chemical Deep Flush', 'Differential Pressure Check', 'Sub-5g Ash Clearance'],
     },
     {
-      code: 'SPEC Nº 04',
+      code: '04 —',
       id: 'wetbelt-cambelt',
       name: 'CAMBELT & WET BELT REPLACEMENT',
       icon: Gauge,
@@ -52,7 +52,7 @@ export default function Services({ onSelectService }) {
       highlights: ['Sump Debris Cleanse', 'New Oil Pump Strainer', 'Precision Locking Tools'],
     },
     {
-      code: 'SPEC Nº 05',
+      code: '05 —',
       id: 'aircon',
       name: 'AIRCON RE-GAS & SANITISATION',
       icon: Wind,
@@ -64,7 +64,7 @@ export default function Services({ onSelectService }) {
       highlights: ['R134a & R1234yf Ready', 'UV Dye Leak Trace', 'Temperature Verified'],
     },
     {
-      code: 'SPEC Nº 06',
+      code: '06 —',
       id: 'clutch-brakes',
       name: 'CLUTCH, GEARBOX & BRAKES',
       icon: Disc,
@@ -76,7 +76,7 @@ export default function Services({ onSelectService }) {
       highlights: ['Brembo & OEM Discs', 'Dual-Mass Flywheel Spec', 'Hydraulic Bleed'],
     },
     {
-      code: 'SPEC Nº 07',
+      code: '07 —',
       id: 'suspension',
       name: 'SUSPENSION & STEERING ALIGNMENT',
       icon: Activity,
@@ -88,7 +88,7 @@ export default function Services({ onSelectService }) {
       highlights: ['Laser Geometry Check', 'OEM Coil Springs', 'Poly/OEM Bushes'],
     },
     {
-      code: 'SPEC Nº 08',
+      code: '08 —',
       id: 'electrical-battery',
       name: 'BATTERY, ALTERNATOR & STARTER',
       icon: Zap,
@@ -102,53 +102,53 @@ export default function Services({ onSelectService }) {
   ];
 
   return (
-    <section id="services" className="py-20 bg-[#EAE6DF] border-t-2 border-[#1A1A18] relative grain-overlay">
+    <section id="services" className="py-20 bg-[#E5E3DC] text-[#111111] border-t-2 border-[#111111] relative newsprint-grain">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-[#1A1A18]/30 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b-2 border-[#111111] pb-6">
           <div>
-            <div className="font-mono-spec text-xs text-[#C83723] tracking-widest uppercase font-semibold mb-2">
-              [ 02 // TECHNICAL WORKSHOP RANGE & SPEC SHEET ]
+            <div className="font-mono-spec text-xs text-[#E53925] tracking-widest uppercase font-bold mb-2">
+              [ 03 // TECHNICAL WORKSHOP SERVICES & REPAIR SPEC ]
             </div>
-            <h2 className="font-display text-4xl sm:text-6xl text-[#1A1A18] uppercase tracking-tight">
-              PRECISION <span className="text-[#C83723]">MECHANICAL WORK</span>
+            <h2 className="font-display text-4xl sm:text-6xl text-[#111111] uppercase tracking-tight">
+              PRECISION <span className="text-[#E53925]">GARAGE REPAIRS</span>
             </h2>
           </div>
-          <p className="mt-4 md:mt-0 text-xs font-mono-spec text-[#6E6D68] max-w-md">
+          <p className="mt-4 md:mt-0 text-sm font-mono-spec text-[#555550] max-w-md font-bold">
             TRANSPARENT FIXED PRICING // NO SURPRISE FEES // FULL DPF & WET BELT SPECIALIST CAPABILITY
           </p>
         </div>
 
-        {/* Spec Sheet Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 hairline-grid border-2 border-[#1A1A18] bg-[#F4F0E8] mb-12">
+        {/* Spec Sheet Grid (1px Hairline Light Grid Layout) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 hairline-grid-light border-2 border-[#111111] bg-[#DEDBD3] mb-12">
           {serviceList.map((s) => {
             const Icon = s.icon;
             return (
               <div 
                 key={s.id} 
-                className="bg-[#F4F0E8] p-6 hover:bg-[#EAE6DF] transition-all duration-300 flex flex-col justify-between group border-b md:border-b-0 border-[#1A1A18]/10 relative"
+                className="bg-[#E5E3DC] p-6 hover:bg-[#DEDBD3] transition-all duration-300 flex flex-col justify-between group relative"
               >
                 {/* Top Spec Header */}
                 <div>
                   <div className="flex justify-between items-center mb-4">
-                    <span className="font-mono-spec text-xs text-[#C83723] font-bold">{s.code}</span>
-                    <span className="px-2 py-0.5 bg-[#C83723]/10 border border-[#C83723] text-[#C83723] font-mono-spec text-[9px] font-bold uppercase tracking-wider">
+                    <span className="font-mono-spec text-sm text-[#E53925] font-bold">{s.code}</span>
+                    <span className="px-2 py-0.5 bg-[#E53925]/10 border border-[#E53925] text-[#E53925] font-mono-spec text-[9px] font-bold uppercase tracking-wider">
                       {s.badge}
                     </span>
                   </div>
 
                   {/* Title & Icon */}
                   <div className="flex items-start gap-3 mb-3">
-                    <div className="p-2.5 bg-[#1A1A18] text-white border border-[#1A1A18] group-hover:bg-[#C83723] transition-colors shrink-0">
-                      <Icon className="w-5 h-5" />
+                    <div className="p-2 bg-[#111111] text-white shrink-0">
+                      <Icon className="w-5 h-5 text-[#E53925]" />
                     </div>
                     <div>
-                      <h3 className="font-display text-xl text-[#1A1A18] uppercase tracking-wide leading-tight">
+                      <h3 className="font-display text-xl text-[#111111] uppercase tracking-wide leading-tight">
                         {s.name}
                       </h3>
-                      <div className="font-mono-spec text-xs text-[#1A1A18]/70 mt-1 flex items-center gap-2">
-                        <span className="text-[#C83723] font-bold">{s.price}</span>
+                      <div className="font-mono-spec text-xs text-[#555550] mt-1 flex items-center gap-2 font-bold">
+                        <span className="text-[#E53925]">{s.price}</span>
                         <span>•</span>
                         <span className="text-[11px]">{s.time}</span>
                       </div>
@@ -156,24 +156,24 @@ export default function Services({ onSelectService }) {
                   </div>
 
                   {/* Description */}
-                  <p className="text-xs text-[#6E6D68] font-serif-editorial leading-relaxed mb-4">
+                  <p className="text-xs text-[#555550] font-sans-body leading-relaxed mb-4">
                     {s.desc}
                   </p>
 
-                  {/* Symptoms & Highlights */}
-                  <div className="space-y-1.5 mb-5 pt-3 border-t border-[#1A1A18]/20 font-mono-spec text-[11px]">
-                    <div className="text-[10px] text-[#6E6D68] uppercase font-bold tracking-wider mb-1">// COMMON SYMPTOMS FIXED:</div>
+                  {/* Symptoms & Highlights List */}
+                  <div className="space-y-1.5 mb-5 pt-3 border-t border-[#111111]/10 font-mono-spec text-[11px]">
+                    <div className="text-[10px] text-[#555550] uppercase font-bold tracking-wider mb-1">// COMMON SYMPTOMS FIXED:</div>
                     {s.symptoms.map((sym, i) => (
-                      <div key={i} className="flex items-center gap-2 text-[#1A1A18]">
-                        <span className="w-1.5 h-1.5 bg-[#C83723] rounded-full"></span>
-                        <span>{sym}</span>
+                      <div key={i} className="flex items-center gap-2 text-[#111111]">
+                        <span className="w-1.5 h-1.5 bg-[#E53925] rounded-full"></span>
+                        <span className="font-medium">{sym}</span>
                       </div>
                     ))}
                   </div>
 
                   <div className="flex flex-wrap gap-1 mb-6">
                     {s.highlights.map((h, i) => (
-                      <span key={i} className="px-2 py-0.5 bg-[#EAE6DF] border border-[#1A1A18]/30 text-[9px] font-mono-spec text-[#1A1A18]">
+                      <span key={i} className="px-2 py-0.5 bg-[#DEDBD3] border border-[#111111]/30 text-[9px] font-mono-spec text-[#111111] font-bold">
                         ✓ {h}
                       </span>
                     ))}
@@ -183,10 +183,10 @@ export default function Services({ onSelectService }) {
                 {/* Bottom CTA Button */}
                 <button
                   onClick={() => onSelectService(s.name)}
-                  className="btn-clipped w-full py-2.5 bg-[#1A1A18] hover:bg-[#C83723] border border-[#1A1A18] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer"
+                  className="btn-editorial w-full py-2.5 bg-[#111111] hover:bg-[#E53925] text-white font-mono-spec text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all cursor-pointer"
                 >
                   <span>REQUEST QUOTE</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <ArrowUpRight className="w-4 h-4 text-[#E53925] group-hover:text-white transition-colors" />
                 </button>
 
               </div>
@@ -194,20 +194,20 @@ export default function Services({ onSelectService }) {
           })}
         </div>
 
-        {/* Custom Consultation Banner */}
-        <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#F4F0E8] border-2 border-[#1A1A18] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+        {/* Custom Spec Consultation Banner */}
+        <div className="crop-bracket-container crop-marks-top crop-marks-bottom bg-[#DEDBD3] border-2 border-[#111111] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
           <div className="space-y-2">
-            <div className="font-mono-spec text-xs text-[#C83723] font-bold uppercase">// NEED A CUSTOM MECHANICAL DIAGNOSTIC?</div>
-            <h3 className="font-display text-2xl sm:text-3xl text-[#1A1A18] uppercase tracking-wide">
+            <div className="font-mono-spec text-xs text-[#E53925] font-bold uppercase">// NEED A CUSTOM MECHANICAL DIAGNOSTIC?</div>
+            <h3 className="font-display text-2xl sm:text-3xl text-[#111111] uppercase tracking-wide">
               UNSURE WHAT YOUR VEHICLE NEEDS? TEST-DRIVE DIAGNOSTICS WITH DAN.
             </h3>
-            <p className="text-sm text-[#6E6D68] font-serif-editorial max-w-2xl">
+            <p className="text-sm text-[#555550] font-sans-body max-w-2xl font-medium">
               We frequently take customers out on diagnostic road tests to hear and feel the issue together before recommending any work.
             </p>
           </div>
           <button
             onClick={() => onSelectService('Diagnostic Consultation')}
-            className="btn-clipped px-6 py-3.5 bg-[#C83723] hover:bg-[#1A1A18] text-white font-mono-spec text-xs font-bold uppercase tracking-widest flex items-center gap-2 shrink-0 cursor-pointer shadow-sm"
+            className="btn-editorial px-6 py-3.5 bg-[#E53925] hover:bg-[#CC2D1B] text-white font-mono-spec text-xs font-bold uppercase tracking-widest flex items-center gap-2 shrink-0 cursor-pointer shadow-md"
           >
             <span>BOOK DIAGNOSTIC TEST</span>
             <ArrowUpRight className="w-4 h-4" />
